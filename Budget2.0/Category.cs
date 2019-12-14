@@ -4,7 +4,9 @@ using System.Text;
 
 namespace Budget2._0
 {
-    class Category
+    public class Category
     {
+        public string Name { get; set; }
+        // maybe make it enumerable instead of class, because number of categories is usually rather limited
     }
 }
