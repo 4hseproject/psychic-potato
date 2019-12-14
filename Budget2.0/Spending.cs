@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Budget2._0
 {
-    class Spending : IFlow
+    public class Spending : IFlow
     {
         public decimal Amount { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public Category Category { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
