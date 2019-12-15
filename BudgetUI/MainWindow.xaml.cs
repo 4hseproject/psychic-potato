@@ -31,5 +31,10 @@ namespace BudgetUI
             chw.Show();
             this.Close();
         }
+
+        private void Category_box_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
