@@ -6,4 +6,8 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Budget2.0\Budget2.0.csproj" />
+  </ItemGroup>
+
 </Project>

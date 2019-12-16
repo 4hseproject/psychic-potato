@@ -63,6 +63,14 @@ namespace Budget2._0
         {
             Data = data;
         }
+        public IFlow GetFlow(decimal amount, Category category, bool IsSpending)
+        {
+            if (IsSpending)
+            {
+                var spending = new Spending();
+                spending.Category = category;
+                spending.Amount = amount;   }
+        }
         public decimal GetAverage(WindowAppData data)
         {
             throw new NotImplementedException();

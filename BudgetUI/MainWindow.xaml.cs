@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Budget2._0;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,6 +21,7 @@ namespace BudgetUI
     /// </summary>
     public partial class MainWindow : Window
     {
+        IAppData appData = Factory.Instance.GetAppData();
         public MainWindow()
         {
             InitializeComponent();
@@ -35,6 +37,12 @@ namespace BudgetUI
         private void Category_box_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
+        }
+
+        private void Button_Click_Add(object sender, RoutedEventArgs e)
+        {
+            
+            Sum_box.Text
         }
     }
 }
