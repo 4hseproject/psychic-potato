@@ -67,6 +67,14 @@ namespace Budget2._0
         {
             throw new NotImplementedException();
         }
+        public decimal GetSmthingbyDate(WindowAppData data, DateTime start, DateTime end)
+        {
+            throw new NotImplementedException();
+        }
+        public List<List<decimal>> ThisIsProbablyForGraphs ()
+        {
+            throw new NotImplementedException();
+        }
         // all logic functions go here 
     }
 }
