@@ -24,5 +24,11 @@ namespace Budget2._0
         {
             return appData ?? (appData = new WindowAppData());
         }
+        private Calculations calculations;
+        public Calculations GetCalculations()
+        {
+            appData = GetAppData();
+            return calculations ?? (calculations = new Calculations(appData));
+        }
     }
 }

@@ -10,8 +10,9 @@ namespace Budget2._0
 
         void Add(T item);
         void Remove(T item);
+        public IEnumerator<T> GetEnumerator();
     }
-    public class ListRepository<T> : IRepository<T> where T :IFlow
+    public class ListRepository<T> : IRepository<T>
     {
         private List<T> items { get; set; }
         public IEnumerable<T> Items => items;
@@ -25,18 +26,21 @@ namespace Budget2._0
         {
             items.Remove(item);
         }
+        public IEnumerator<T> GetEnumerator() => items.GetEnumerator();
     }
-    public interface IAppData
+        public interface IAppData
     {
         public IRepository<Income> gains { get; }
-        public IRepository<Spending> loses { get; }
+        public IRepository<Spending> losses { get; }
+        public IRepository<Category> categories { get; }
 
     }
     public abstract class BaseAppData : IAppData
     {
         public IRepository<Income> gains { get; set; }
 
-        public IRepository<Spending> loses { get; set; }
+        public IRepository<Spending> losses { get; set; }
+        public IRepository<Category> categories { get; set; }
     }
     public class WindowAppData : BaseAppData
     {
@@ -44,7 +48,8 @@ namespace Budget2._0
         {
             gains = new ListRepository<Income>();
 
-            loses = new ListRepository<Spending>();
+            losses = new ListRepository<Spending>();
+            categories = new ListRepository<Category>();
         }
 
         public void GetIncomes(Income income)
@@ -53,23 +58,34 @@ namespace Budget2._0
         }
         public void GetSpendings(Spending spending)
         {
-            loses.Add(spending);
+            losses.Add(spending);
         }
     }
     public class Calculations
     {
-        private WindowAppData Data { get; set; }
-        public Calculations(WindowAppData data)
+        private IAppData Data { get; set; }
+        public Calculations(IAppData data)
         {
             Data = data;
         }
-        public IFlow GetFlow(decimal amount, Category category, bool IsSpending)
+        public void AddFlow(decimal amount, Category category,string comment, bool IsSpending)
         {
             if (IsSpending)
             {
                 var spending = new Spending();
                 spending.Category = category;
-                spending.Amount = amount;   }
+                spending.Amount = amount;
+                spending.Comment = comment;
+                Data.losses.Add(spending);
+            }
+            else
+            {
+                var income = new Income();
+                income.Category = category;
+                income.Amount = amount;
+                income.Comment = comment;
+                Data.gains.Add(income); 
+            }
         }
         public decimal GetAverage(WindowAppData data)
         {

@@ -9,5 +9,6 @@ namespace Budget2._0
         public decimal Amount { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public Category Category { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public string Comment { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public int ID { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
     }
 }

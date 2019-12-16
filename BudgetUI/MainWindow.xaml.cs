@@ -22,6 +22,7 @@ namespace BudgetUI
     public partial class MainWindow : Window
     {
         IAppData appData = Factory.Instance.GetAppData();
+        Calculations calculations = Factory.Instance.GetCalculations();
         public MainWindow()
         {
             InitializeComponent();
@@ -41,8 +42,27 @@ namespace BudgetUI
 
         private void Button_Click_Add(object sender, RoutedEventArgs e)
         {
+            decimal amount;
+            bool isSpending;
+            string comment;
+            comment = Comment_box.Text;
+            Category category = new Category();
+            while (
+            !Decimal.TryParse(Sum_box.Text,out amount))
+            {
+                MessageBox.Show("Please use apropriate format", "Wrong format");
+            }
             
-            Sum_box.Text
+            category.Name = Category_box.SelectedItem.ToString();
+            foreach (Category el in appData.categories)
+            {
+                if (el.Name == category.Name)
+                    category = el;
+            }
+            if (Inc_Spend.SelectedItem.ToString().ToLower() == "spending")
+            { isSpending = true; }
+            else { isSpending = false; }
+            calculations.AddFlow(amount, category,comment,isSpending);
         }
     }
 }

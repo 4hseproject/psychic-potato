@@ -7,5 +7,6 @@ namespace Budget2._0
         public decimal Amount { get; set; }
         public Category Category { get; set; }
         public string Comment { get; set; }
+        public int ID { get; set; }
     }
 }
