@@ -50,6 +50,7 @@ namespace Budget2._0
 
             losses = new ListRepository<Spending>();
             categories = new ListRepository<Category>();
+            //TODO here we implement basic categories
         }
 
         public void GetIncomes(Income income)
@@ -108,6 +109,6 @@ namespace Budget2._0
         {
             throw new NotImplementedException();
         }
-        // all logic functions go here 
+        //TODO all logic functions go here 
     }
 }

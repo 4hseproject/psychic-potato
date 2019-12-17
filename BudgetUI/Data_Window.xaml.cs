@@ -30,11 +30,11 @@ namespace BudgetUI
             this.Category = category;
             if (Category == null)
             {
-
+                //TODO show results for all categories
             }
             else
             {
-
+                //TODO show results for selected category
             }
         }
 

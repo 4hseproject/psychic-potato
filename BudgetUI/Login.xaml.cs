@@ -22,4 +22,5 @@ namespace BudgetUI
             InitializeComponent();
         }
     }
+    // todo login/registration
 }

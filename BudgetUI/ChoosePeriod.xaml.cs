@@ -38,6 +38,7 @@ namespace BudgetUI
             var result2 = new DateTime();
             var category = new Category();
             category = calculations.GetCategory(ComboBox_ChooseCategory.SelectedItem.ToString());
+            // todo check that while part works correctly
             while (!DateTime.TryParse(TextBox_Start.Text, out result) || !DateTime.TryParse(TextBox_End.Text, out result2))
             {
                 MessageBox.Show("Please enter the dates in correct format", "Incorrect Input");
