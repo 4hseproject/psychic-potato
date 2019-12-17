@@ -13,26 +13,19 @@ using System.Windows.Shapes;
 namespace BudgetUI
 {
     /// <summary>
-    /// Логика взаимодействия для Login.xaml
+    /// Логика взаимодействия для Registration.xaml
     /// </summary>
-    public partial class Login : Window
+    public partial class Registration : Window
     {
-        public Login()
+        public Registration()
         {
             InitializeComponent();
         }
 
-        private void Button_sign_in_Click(object sender, RoutedEventArgs e)
+        private void Button_Enter_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow mw = new MainWindow();
-            mw.Show();
-            this.Close();
-        }
-
-        private void Button_sign_up_Click(object sender, RoutedEventArgs e)
-        {
-            Registration rw = new Registration();
-            rw.Show();
+            Login lw = new Login();
+            lw.Show();
             this.Close();
         }
     }

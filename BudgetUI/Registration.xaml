@@ -1,0 +1,15 @@
+﻿<Window x:Class="BudgetUI.Registration"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BudgetUI"
+        mc:Ignorable="d"
+        Title="Registration" Height="450" Width="800">
+    <Grid>
+        <TextBox x:Name="TextBox_name" Margin="29,80,371,293"></TextBox>
+        <TextBox x:Name="TextBox_budget" Margin="29,156,371,217"></TextBox>
+        <TextBox x:Name="TextBox_password" Margin="29,237,371,136"></TextBox>
+        <Button x:Name="Button_Enter" Margin="514,331,10,25" FontSize="30" FontWeight="Bold" Background="LightGreen" Click="Button_Enter_Click">Enter</Button>
+    </Grid>
+</Window>

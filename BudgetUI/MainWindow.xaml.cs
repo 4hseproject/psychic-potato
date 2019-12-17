@@ -25,7 +25,9 @@ namespace BudgetUI
         Calculations calculations = Factory.Instance.GetCalculations();
         public MainWindow()
         {
-            InitializeComponent();
+            Login lg = new Login();
+            lg.Show();
+            this.Close();
         }
 
         private void More_info_Button_Click(object sender, RoutedEventArgs e)
