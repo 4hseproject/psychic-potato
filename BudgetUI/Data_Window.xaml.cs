@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Budget2._0;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -17,9 +18,24 @@ namespace BudgetUI
     /// </summary>
     public partial class Data_Window : Window
     {
-        public Data_Window()
+        public DateTime StartDt { get; set; }
+        public DateTime EndDt { get; set; }
+        public Category Category { get; set; }
+        public Data_Window(DateTime start, DateTime end, Category category)
         {
+            
             InitializeComponent();
+            this.StartDt = start;
+            this.EndDt = end;
+            this.Category = category;
+            if (Category == null)
+            {
+
+            }
+            else
+            {
+
+            }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

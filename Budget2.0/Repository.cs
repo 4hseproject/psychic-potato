@@ -68,6 +68,15 @@ namespace Budget2._0
         {
             Data = data;
         }
+        public Category GetCategory(string name)
+        {
+            foreach (Category el in Data.categories)
+            {
+                if (el.Name == name)
+                    return el;
+            }
+            return null;
+        }
         public void AddFlow(decimal amount, Category category,string comment, bool IsSpending)
         {
             if (IsSpending)
