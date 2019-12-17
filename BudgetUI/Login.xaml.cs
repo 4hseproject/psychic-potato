@@ -36,4 +36,5 @@ namespace BudgetUI
             this.Close();
         }
     }
+    // todo login/registration
 }

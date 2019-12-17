@@ -50,6 +50,7 @@ namespace Budget2._0
 
             losses = new ListRepository<Spending>();
             categories = new ListRepository<Category>();
+            //TODO here we implement basic categories
         }
 
         public void GetIncomes(Income income)
@@ -67,6 +68,15 @@ namespace Budget2._0
         public Calculations(IAppData data)
         {
             Data = data;
+        }
+        public Category GetCategory(string name)
+        {
+            foreach (Category el in Data.categories)
+            {
+                if (el.Name == name)
+                    return el;
+            }
+            return null;
         }
         public void AddFlow(decimal amount, Category category,string comment, bool IsSpending)
         {
@@ -99,6 +109,6 @@ namespace Budget2._0
         {
             throw new NotImplementedException();
         }
-        // all logic functions go here 
+        //TODO all logic functions go here 
     }
 }
