@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Budget2._0;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -17,6 +18,8 @@ namespace BudgetUI
     /// </summary>
     public partial class Login : Window
     {
+        IAppData appData = Factory.Instance.GetAppData();
+        Calculations calculations = Factory.Instance.GetCalculations();
         public Login()
         {
             InitializeComponent();
@@ -24,9 +27,18 @@ namespace BudgetUI
 
         private void Button_sign_in_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow mw = new MainWindow();
-            mw.Show();
-            this.Close();
+            var user = new User();
+            user = calculations.CheckLogin(TextBox_login.Text, PasswordBox_password.Password);
+            if (user != null)
+            {
+                MainWindow mw = new MainWindow(user);
+                mw.Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("wrong login or password", "Authentication Error");
+            }
         }
 
         private void Button_sign_up_Click(object sender, RoutedEventArgs e)

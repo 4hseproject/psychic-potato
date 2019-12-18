@@ -23,9 +23,11 @@ namespace BudgetUI
     {
         IAppData appData = Factory.Instance.GetAppData();
         Calculations calculations = Factory.Instance.GetCalculations();
-        public MainWindow()
+        public User User { get; set; }
+        public MainWindow(User user)
         {
             InitializeComponent();
+            this.User = user;
             //Login lg = new Login();
            // lg.Show();
             //this.Close();

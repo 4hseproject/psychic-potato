@@ -33,6 +33,7 @@ namespace Budget2._0
         public IRepository<Income> gains { get; }
         public IRepository<Spending> losses { get; }
         public IRepository<Category> categories { get; }
+        public IRepository<User> users { get; }
 
     }
     public abstract class BaseAppData : IAppData
@@ -41,6 +42,7 @@ namespace Budget2._0
 
         public IRepository<Spending> losses { get; set; }
         public IRepository<Category> categories { get; set; }
+        public IRepository<User> users { get; set; }
     }
     public class WindowAppData : BaseAppData
     {
@@ -50,6 +52,7 @@ namespace Budget2._0
 
             losses = new ListRepository<Spending>();
             categories = new ListRepository<Category>();
+            users = new ListRepository<User>();
             //TODO here we implement basic categories
         }
 
@@ -96,6 +99,36 @@ namespace Budget2._0
                 income.Comment = comment;
                 Data.gains.Add(income); 
             }
+        }
+        public void AddUser(string login, string password, int balance)
+        {
+            int id;
+            int max = 0;
+            foreach (User el in Data.users)
+            {
+                if (el.UID > max)
+                {
+                    max = el.UID;
+                }
+            }
+            id = max + 1;
+            var user = new User();
+            user.UID = id;
+            user.OverallBalance = balance;
+            user.Login = login;
+            user.Password = password;
+            Data.users.Add(user);
+        }
+        public User CheckLogin(string login, string password)
+        {
+            foreach (User el in Data.users)
+            {
+                if (el.Login == login)
+                    if (el.Password == password)
+                        return el;
+
+            }
+            return null;
         }
         public decimal GetAverage(WindowAppData data)
         {
