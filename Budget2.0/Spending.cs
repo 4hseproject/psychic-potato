@@ -6,9 +6,9 @@ namespace Budget2._0
 {
     public class Spending : IFlow
     {
-        public decimal Amount { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public Category Category { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string Comment { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public int ID { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public decimal Amount { get ;set; }
+        public Category Category { get;  set; }
+        public string Comment { get ; set; }
+        public int UID { get ; set; }
     }
 }
