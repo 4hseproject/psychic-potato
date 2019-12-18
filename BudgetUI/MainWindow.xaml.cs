@@ -29,8 +29,10 @@ namespace BudgetUI
             InitializeComponent();
             this.User = user;
             Balance_box.Text = User.OverallBalance.ToString();
+            Inc_Spend.Items.Add("Spending");
+            Inc_Spend.Items.Add("Income");
             //Login lg = new Login();
-           // lg.Show();
+            // lg.Show();
             //this.Close();
         }
 
