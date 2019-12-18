@@ -72,6 +72,7 @@ namespace Budget2._0
         private const string LossesFileName = "data/losses.json";
         private const string CategoriesFileName = "data/categories.json";
         private const string UsersFileName = "data/users.json";
+        // TODO Add files, check executability
         private void LoadData()
         {
             users = Deserialize<ListRepository<User>>(UsersFileName);
@@ -130,14 +131,16 @@ namespace Budget2._0
             }
             return null;
         }
-        public void AddFlow(decimal amount, Category category,string comment, bool IsSpending)
+        public void AddFlow(decimal amount, Category category,string comment, bool IsSpending, User user)
         {
+            // TODO add data attribute to the IFlow interface, so we can plot graphs using that data
             if (IsSpending)
             {
                 var spending = new Spending();
                 spending.Category = category;
                 spending.Amount = amount;
                 spending.Comment = comment;
+                spending.UID = user.UID;
                 Data.losses.Add(spending);
             }
             else
@@ -146,6 +149,7 @@ namespace Budget2._0
                 income.Category = category;
                 income.Amount = amount;
                 income.Comment = comment;
+                income.UID = user.UID;
                 Data.gains.Add(income); 
             }
         }
@@ -160,7 +164,7 @@ namespace Budget2._0
                         max = el.UID;
                     }
                 }
-            
+            // TODO check that user with such login doesn not exist -> make method boolean and return false if such user exists, true otherwise
             id = max + 1;
             var user = new User();
             user.UID = id;

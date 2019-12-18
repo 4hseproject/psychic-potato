@@ -71,7 +71,7 @@ namespace BudgetUI
             if (Inc_Spend.SelectedItem.ToString().ToLower() == "spending")
             { isSpending = true; }
             else { isSpending = false; }
-            calculations.AddFlow(amount, category,comment,isSpending);
+            calculations.AddFlow(amount, category,comment,isSpending, User);
         }
     }
 }
