@@ -35,7 +35,7 @@ namespace BudgetUI
 
         private void More_info_Button_Click(object sender, RoutedEventArgs e)
         {
-            ChoosePeriod chw = new ChoosePeriod();
+            ChoosePeriod chw = new ChoosePeriod(User);
             chw.Show();
             this.Close();
         }

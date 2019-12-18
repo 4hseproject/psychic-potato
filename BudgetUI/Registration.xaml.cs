@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Budget2._0;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -17,6 +18,8 @@ namespace BudgetUI
     /// </summary>
     public partial class Registration : Window
     {
+        IAppData appData = Factory.Instance.GetAppData();
+        Calculations calculations = Factory.Instance.GetCalculations();
         public Registration()
         {
             InitializeComponent();
@@ -24,9 +27,27 @@ namespace BudgetUI
 
         private void Button_Enter_Click(object sender, RoutedEventArgs e)
         {
-            Login lw = new Login();
-            lw.Show();
-            this.Close();
+            
+            if (TextBox_name.Text.Length > 0) 
+            {
+                if (PasswordBox_password.Password.Length > 0)
+                {
+                    if (Int32.TryParse(TextBox_budget.Text, out int budget))
+                    {
+                        calculations.AddUser(TextBox_name.Text, PasswordBox_password.Password, budget);
+                        Login lw = new Login();
+                        lw.Show();
+                        this.Close();
+                    }
+                    else
+                        MessageBox.Show("Please input your budget properly", "Type Error");
+                }
+                else
+                    MessageBox.Show("Password cannot be empty");
+                
+            }
+            else
+                MessageBox.Show("Login cannot be empty");
         }
     }
 }

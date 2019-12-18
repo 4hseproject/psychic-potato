@@ -20,14 +20,16 @@ namespace BudgetUI
     {
         IAppData appData = Factory.Instance.GetAppData();
         Calculations calculations = Factory.Instance.GetCalculations();
-        public ChoosePeriod()
+        public User User { get; set; }
+        public ChoosePeriod(User user)
         {
             InitializeComponent();
+            this.User = User;
         }
 
         private void Back_Button_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow mw = new MainWindow();
+            MainWindow mw = new MainWindow(User);
             mw.Show();
             this.Close();
         }
