@@ -25,7 +25,7 @@ namespace BudgetUI
         private void Button_sign_in_Click(object sender, RoutedEventArgs e)
         {
             MainWindow mw = new MainWindow();
-            //mw.Show(); <----вот тут оно ругается
+            mw.Show();
             this.Close();
         }
 
