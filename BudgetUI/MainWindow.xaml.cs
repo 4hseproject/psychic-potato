@@ -28,6 +28,7 @@ namespace BudgetUI
         {
             InitializeComponent();
             this.User = user;
+            Balance_box.Text = User.OverallBalance.ToString();
             //Login lg = new Login();
            // lg.Show();
             //this.Close();
