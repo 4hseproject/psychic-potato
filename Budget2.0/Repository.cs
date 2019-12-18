@@ -70,11 +70,14 @@ namespace Budget2._0
         }
         private const string GainsFileName = "data/gains.json";
         private const string LossesFileName = "data/losses.json";
-        private const string Categories = "data/Categories.json";
+        private const string CategoriesFileName = "data/categories.json";
         private const string UsersFileName = "data/users.json";
         private void LoadData()
         {
-            
+            users = Deserialize<ListRepository<User>>(UsersFileName);
+            gains = Deserialize<ListRepository<Income>>(GainsFileName);
+            losses = Deserialize<ListRepository<Spending>>(LossesFileName);
+            categories = Deserialize<ListRepository<Category>>(CategoriesFileName);
         }
 
         private void SaveData()
@@ -95,11 +98,7 @@ namespace Budget2._0
         }
         public WindowAppData()
         {
-            gains = new ListRepository<Income>();
-
-            losses = new ListRepository<Spending>();
-            categories = new ListRepository<Category>();
-            users = new ListRepository<User>();
+            LoadData();
             //TODO here we implement basic categories
         }
 
