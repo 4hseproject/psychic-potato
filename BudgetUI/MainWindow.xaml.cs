@@ -28,6 +28,7 @@ namespace BudgetUI
         {
             InitializeComponent();
             this.User = user;
+            int check = User.OverallBalance;
             Balance_box.Text = User.OverallBalance.ToString();
             Inc_Spend.Items.Add("Spending");
             Inc_Spend.Items.Add("Income");

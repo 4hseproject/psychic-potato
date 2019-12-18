@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 
 namespace Budget2._0
@@ -55,6 +57,29 @@ namespace Budget2._0
     }
     public class WindowAppData : BaseAppData
     {
+        private T Deserialize<T>(string fileName)
+        {
+            using (var sr = new StreamReader(fileName))
+            {
+                using (var jsonReader = new JsonTextReader(sr))
+                {
+                    var serializer = new JsonSerializer();
+                    return serializer.Deserialize<T>(jsonReader);
+                }
+            }
+        }
+
+        private void Serialize<T>(string fileName, T data)
+        {
+            using (var sw = new StreamWriter(fileName))
+            {
+                using (var jsonWriter = new JsonTextWriter(sw))
+                {
+                    var serializer = new JsonSerializer();
+                    serializer.Serialize(jsonWriter, data);
+                }
+            }
+        }
         public WindowAppData()
         {
             gains = new ListRepository<Income>();
