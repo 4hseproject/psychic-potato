@@ -68,6 +68,19 @@ namespace Budget2._0
                 }
             }
         }
+        private const string GainsFileName = "data/gains.json";
+        private const string LossesFileName = "data/losses.json";
+        private const string Categories = "data/Categories.json";
+        private const string UsersFileName = "data/users.json";
+        private void LoadData()
+        {
+            
+        }
+
+        private void SaveData()
+        {
+            
+        }
 
         private void Serialize<T>(string fileName, T data)
         {
