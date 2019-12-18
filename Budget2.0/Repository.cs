@@ -82,7 +82,10 @@ namespace Budget2._0
 
         private void SaveData()
         {
-            
+             Serialize(UsersFileName, users);
+             Serialize(GainsFileName, gains);
+             Serialize(LossesFileName, losses);
+             Serialize(CategoriesFileName, categories);
         }
 
         private void Serialize<T>(string fileName, T data)
