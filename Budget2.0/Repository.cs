@@ -1,20 +1,20 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Budget2._0
 {
-    public interface IRepository<T>
+    public interface IRepository<T>: IEnumerable<T>
     {
         IEnumerable<T> Items { get; }
 
         void Add(T item);
         void Remove(T item);
-        public IEnumerator<T> GetEnumerator();
     }
     public class ListRepository<T> : IRepository<T>
     {
-        private List<T> items { get; set; }
+        private List<T> items =  new List<T>();
         public IEnumerable<T> Items => items;
 
         public void Add(T item)
@@ -26,7 +26,16 @@ namespace Budget2._0
         {
             items.Remove(item);
         }
-        public IEnumerator<T> GetEnumerator() => items.GetEnumerator();
+
+        public IEnumerator<T> GetEnumerator()
+        {
+            return items?.GetEnumerator();
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return this.GetEnumerator();
+        }
     }
         public interface IAppData
     {
@@ -103,14 +112,15 @@ namespace Budget2._0
         public void AddUser(string login, string password, int balance)
         {
             int id;
-            int max = 0;
-            foreach (User el in Data.users)
-            {
-                if (el.UID > max)
+            int max = 0; 
+                foreach (User el  in Data.users)
                 {
-                    max = el.UID;
+                    if (el.UID > max)
+                    {
+                        max = el.UID;
+                    }
                 }
-            }
+            
             id = max + 1;
             var user = new User();
             user.UID = id;
