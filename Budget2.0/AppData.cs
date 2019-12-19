@@ -62,7 +62,7 @@ namespace Budget2._0
             }
         }
         // TODO Add files, check executability
-        private void LoadData()
+        public void LoadData()
         {
             users = Deserialize<List<User>>(UsersFileName);
             gains = Deserialize<List<Income>>(GainsFileName);
