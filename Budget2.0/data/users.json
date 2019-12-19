@@ -1,3 +1,9 @@
-{
+[
+  {
+    "Login": "Jack",
+    "Password": "qwerty",
+    "UID": 1,
+    "OverallBalance": 15000
 
-}
+  }
+]
