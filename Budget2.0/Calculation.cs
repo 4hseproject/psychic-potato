@@ -56,7 +56,7 @@ namespace Budget2._0
             else
                 return balance + amount;
         }
-        public void AddUser(string login, string password, decimal balance)
+        public bool AddUser(string login, string password, decimal balance)
         {
             int id;
             int max = 0; 
@@ -66,8 +66,11 @@ namespace Budget2._0
                     {
                         max = el.UID;
                     }
+                    if (el.Login == login)
+                { return false; }
+                        
                 }
-            // TODO check that user with such login doesn not exist -> make method boolean and return false if such user exists, true otherwise
+            
             id = max + 1;
             var user = new User();
             user.UID = id;
@@ -76,6 +79,7 @@ namespace Budget2._0
             user.Password = password;
             Data.users.Add(user);
             Data.SaveData();
+            return true;
         }
         public User CheckLogin(string login, string password)
         {
