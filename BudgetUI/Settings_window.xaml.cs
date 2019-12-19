@@ -28,5 +28,10 @@ namespace BudgetUI
             //mw.Show();
             //this.Close();
         }
+
+        private void Button_ok_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

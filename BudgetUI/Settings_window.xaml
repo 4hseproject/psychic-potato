@@ -8,7 +8,7 @@
         Title="Settings_window" Height="450" Width="600">
     <Grid>
         <Button Margin="338,330,10,10" FontSize="40" FontWeight="Bold" Background="LightPink" Click="Button_MainMenu_Click">Main Menu</Button>
-        <Button Margin="70,330,278,10" FontSize="40" FontWeight="Bold" Background="LightGreen">OK</Button>
+        <Button x:Name="Button_ok" Margin="70,330,278,10" FontSize="40" FontWeight="Bold" Background="LightGreen" Click="Button_ok_Click">OK</Button>
         <TextBox x:Name="TextBox_Name" FontSize="40" VerticalAlignment="Top" Margin="10,96,278,0"></TextBox>
         <TextBox x:Name="TextBox_Budget" FontSize="40" VerticalAlignment="Top" Margin="10,173,278,0"></TextBox>
         <TextBox x:Name="TextBox_Password" FontSize="40" VerticalAlignment="Top" Margin="10,256,278,0"></TextBox>
