@@ -21,13 +21,15 @@ namespace BudgetUI
         public DateTime StartDt { get; set; }
         public DateTime EndDt { get; set; }
         public Category Category { get; set; }
-        public Data_Window(DateTime start, DateTime end, Category category)
+        public User User { get; set; }
+        public Data_Window(User User, DateTime start, DateTime end, Category category)
         {
             
             InitializeComponent();
             this.StartDt = start;
             this.EndDt = end;
             this.Category = category;
+            this.User = User;
             if (Category == null)
             {
                 //TODO show results for all categories

@@ -19,7 +19,7 @@ namespace Budget2._0
                 return instance;
             }
         }
-        /*private IAppData appData;
+        private IAppData appData;
         public IAppData GetAppData()
         {
             return appData ?? (appData = new WindowAppData());
@@ -29,6 +29,6 @@ namespace Budget2._0
         {
             appData = GetAppData();
             return calculations ?? (calculations = new Calculations(appData));
-        }*/
+        }
     }
 }
