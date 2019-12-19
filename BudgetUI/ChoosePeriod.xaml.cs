@@ -18,8 +18,8 @@ namespace BudgetUI
     /// </summary>
     public partial class ChoosePeriod : Window
     {
-        IAppData appData = Factory.Instance.GetAppData();
-        Calculations calculations = Factory.Instance.GetCalculations();
+        //IAppData appData = Factory.Instance.GetAppData();
+        //Calculations calculations = Factory.Instance.GetCalculations();
         public User User { get; set; }
         public ChoosePeriod(User user)
         {
@@ -39,7 +39,7 @@ namespace BudgetUI
             var result = new DateTime();
             var result2 = new DateTime();
             var category = new Category();
-            category = calculations.GetCategory(ComboBox_ChooseCategory.SelectedItem.ToString());
+            //category = calculations.GetCategory(ComboBox_ChooseCategory.SelectedItem.ToString());
             // todo check that while part works correctly
             while (!DateTime.TryParse(TextBox_Start.Text, out result) || !DateTime.TryParse(TextBox_End.Text, out result2))
             {

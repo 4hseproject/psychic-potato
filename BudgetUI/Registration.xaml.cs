@@ -18,8 +18,8 @@ namespace BudgetUI
     /// </summary>
     public partial class Registration : Window
     {
-        IAppData appData = Factory.Instance.GetAppData();
-        Calculations calculations = Factory.Instance.GetCalculations();
+        //IAppData appData = Factory.Instance.GetAppData();
+        //Calculations calculations = Factory.Instance.GetCalculations();
         public Registration()
         {
             InitializeComponent();
@@ -34,7 +34,7 @@ namespace BudgetUI
                 {
                     if (Int32.TryParse(TextBox_budget.Text, out int budget))
                     {
-                        calculations.AddUser(TextBox_name.Text, PasswordBox_password.Password, budget);
+                        //calculations.AddUser(TextBox_name.Text, PasswordBox_password.Password, budget);
                         Login lw = new Login();
                         lw.Show();
                         this.Close();

@@ -18,8 +18,8 @@ namespace BudgetUI
     /// </summary>
     public partial class Login : Window
     {
-        IAppData appData = Factory.Instance.GetAppData();
-        Calculations calculations = Factory.Instance.GetCalculations();
+        //IAppData appData = Factory.Instance.GetAppData();
+        //Calculations calculations = Factory.Instance.GetCalculations();
         public Login()
         {
             InitializeComponent();
@@ -28,7 +28,7 @@ namespace BudgetUI
         private void Button_sign_in_Click(object sender, RoutedEventArgs e)
         {
             var user = new User();
-            user = calculations.CheckLogin(TextBox_login.Text, PasswordBox_password.Password);
+            //user = //calculations.CheckLogin(TextBox_login.Text, PasswordBox_password.Password);
             if (user != null)
             {
                 MainWindow mw = new MainWindow(user);
@@ -45,6 +45,13 @@ namespace BudgetUI
         {
             Registration rw = new Registration();
             rw.Show();
+            this.Close();
+        }
+
+        private void Button_forgot_password_Click(object sender, RoutedEventArgs e)
+        {
+            Mary_tries_graphs maryw = new Mary_tries_graphs();
+            maryw.Show();
             this.Close();
         }
     }

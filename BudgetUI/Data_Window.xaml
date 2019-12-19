@@ -7,7 +7,21 @@
         mc:Ignorable="d"
         Title="Data_Window" Height="450" Width="800">
     <Grid>
-        <Button FontSize="100" Background="AntiqueWhite" Click="Button_Click">clICk foR tHE EnD</Button>
-        
+        <TextBlock Margin="10,14,558,0" FontSize="20" VerticalAlignment="Top">Your expenses for period:</TextBlock>
+        <TextBlock x:Name="TextBlock_start" Margin="242,13,438,0" FontSize="22" VerticalAlignment="Top">22.02.2009</TextBlock>
+        <TextBlock FontSize="20" Margin="362,14,422,392">-</TextBlock>
+        <TextBlock Margin="383,12,297,0" FontSize="22" VerticalAlignment="Top">23.02.2009</TextBlock>
+        <ListView Name="spendingsList" Margin="0,47,191,0" >
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Category}">Категория</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Spending}" Width="100">Траты</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=DateTime}">Дата</GridViewColumn>
+                </GridView>
+            </ListView.View>
+            
+        </ListView>
+
     </Grid>
+    
 </Window>
