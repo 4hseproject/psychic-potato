@@ -22,11 +22,16 @@ namespace BudgetUI
             InitializeComponent();
         }
 
-        /*private void Button_MainMenu_Click(object sender, RoutedEventArgs e)
+        private void Button_MainMenu_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow mw = new MainWindow(user);
-            mw.Show();
-            this.Close();
-        }*/
+            //MainWindow mw = new MainWindow(user);
+            //mw.Show();
+            //this.Close();
+        }
+
+        private void Button_ok_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
