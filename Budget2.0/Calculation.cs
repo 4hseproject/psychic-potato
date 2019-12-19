@@ -45,7 +45,14 @@ namespace Budget2._0
                 Data.SaveData();
             }
         }
-        public void AddUser(string login, string password, int balance)
+        public decimal CalculateBalance(decimal balance, decimal amount, bool IsSpending)
+        {
+            if (IsSpending)
+                return balance - amount;
+            else
+                return balance + amount;
+        }
+        public void AddUser(string login, string password, decimal balance)
         {
             int id;
             int max = 0; 
