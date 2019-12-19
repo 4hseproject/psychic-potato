@@ -97,8 +97,9 @@ namespace BudgetUI
             if (Inc_Spend.SelectedItem.ToString().ToLower() == "spending")
             { isSpending = true; }
             else { isSpending = false; }
-            calculations.AddFlow(amount, category,comment,isSpending, User);
-            Balance_box.Text = calculations.CalculateBalance(Decimal.Parse(Balance_box.Text), Decimal.Parse(Sum_box.Text), isSpending).ToString();
+            User = calculations.AddFlow(amount, category,comment,isSpending, User);
+            Balance_box.Text = User.OverallBalance.ToString();
+            //Balance_box.Text = calculations.CalculateBalance(Decimal.Parse(Balance_box.Text), Decimal.Parse(Sum_box.Text), isSpending).ToString();
             Sum_box.Text = "";
             Comment_box.Text = "";
             Inc_Spend.SelectedIndex = -1;

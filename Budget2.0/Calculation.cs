@@ -24,7 +24,7 @@ namespace Budget2._0
             }
             return null;
         }
-        public void AddFlow(decimal amount, Category category,string comment, bool IsSpending, User user)
+        public User AddFlow(decimal amount, Category category,string comment, bool IsSpending, User user)
         {
             // TODO add data attribute to the IFlow interface, so we can plot graphs using that data
             if (IsSpending)
@@ -32,6 +32,8 @@ namespace Budget2._0
                 var spending = new Spending(amount,category,comment,user.UID,category.ID);
                 Data.GetSpendings(spending);
                 Data.SaveData();
+                user.OverallBalance -= amount;
+                return user;
             }
             else
             {
@@ -43,6 +45,8 @@ namespace Budget2._0
                 income.CatId = category.ID;
                 Data.GetIncomes(income);
                 Data.SaveData();
+                user.OverallBalance += amount;
+                return user;
             }
         }
         public decimal CalculateBalance(decimal balance, decimal amount, bool IsSpending)
