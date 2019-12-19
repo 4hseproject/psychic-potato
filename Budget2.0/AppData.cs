@@ -37,6 +37,7 @@ namespace Budget2._0
                 }
             }
         }
+        
         public void GetIncomes(Income income)
         {
             gains.Add(income);

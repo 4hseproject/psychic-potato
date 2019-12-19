@@ -7,39 +7,7 @@ using System.Text;
 
 namespace Budget2._0
 {
-    public interface IRepository<T>: IEnumerable<T>
-    {
-        IEnumerable<T> Items { get; }
-
-        void Add(T item);
-        void Remove(T item);
-    }
-    public class ListRepository<T> : List<T>, IRepository<T>
-    {
-        private List<T> items =  new List<T>();
-        public IEnumerable<T> Items => items;
-
-        public void Add(T item)
-        {
-            items.Add(item);
-        }
-
-        public void Remove(T item)
-        {
-            items.Remove(item);
-        }
-
-        //public IEnumerator<T> GetEnumerator()
-        //{
-        //    return items?.GetEnumerator();
-        //}
-
-       // IEnumerator IEnumerable.GetEnumerator()
-        //{
-        //    return this.GetEnumerator();
-        //}
-    }
-       
+     
     public class Calculations
     {
         private AppData Data { get; set; }
