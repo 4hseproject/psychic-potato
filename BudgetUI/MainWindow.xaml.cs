@@ -59,13 +59,36 @@ namespace BudgetUI
             string comment;
             comment = Comment_box.Text;
             Category category = new Category();
-            while (
+            if(
             !Decimal.TryParse(Sum_box.Text,out amount))
             {
                 MessageBox.Show("Please use apropriate format", "Wrong format");
+                return;
             }
-            
-            category.Name = Category_box.SelectedItem.ToString();
+            if (Inc_Spend.SelectedItem is null)
+            {
+                MessageBox.Show("Chose trazaktion", "Gde den§gi?");
+            }
+            else
+            {
+                if (Inc_Spend.SelectedItem is "Income")
+                {
+                    category.Name = "Income";
+                }
+                else
+                {
+                    if (Category_box.SelectedItem is null)
+                    {
+                        MessageBox.Show("zapili categoriu");
+                        return;
+                    }
+                    else
+                    {
+                        category.Name = Category_box.SelectedItem.ToString();
+
+                    }
+                }
+            }
             foreach (Category el in appData.categories)
             {
                 if (el.Name == category.Name)
