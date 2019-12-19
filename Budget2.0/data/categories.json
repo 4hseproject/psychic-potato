@@ -1,6 +1,16 @@
 [
 
   {
+    "Name": "Food",
+    "ID": "1"
 
+  },
+  {
+    "Name": "Transportation",
+    "ID": "2"
+  },
+  {
+    "Name": "Clothes",
+    "ID": "3"
   }
 ]

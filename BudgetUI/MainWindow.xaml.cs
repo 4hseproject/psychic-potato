@@ -29,6 +29,10 @@ namespace BudgetUI
             InitializeComponent();
             this.User = user;
             int check = User.OverallBalance;
+            foreach (Category el in appData.categories)
+            {
+                Category_box.Items.Add(el.Name);
+            }
             Balance_box.Text = User.OverallBalance.ToString();
             Inc_Spend.Items.Add("Spending");
             Inc_Spend.Items.Add("Income");
@@ -72,6 +76,10 @@ namespace BudgetUI
             { isSpending = true; }
             else { isSpending = false; }
             calculations.AddFlow(amount, category,comment,isSpending, User);
+            Sum_box.Text = "";
+            Comment_box.Text = "";
+            Inc_Spend.SelectedIndex = -1;
+            Category_box.SelectedIndex = -1;
         }
     }
 }
