@@ -14,7 +14,7 @@ namespace Budget2._0
         //void Add(T item);
         //void Remove(T item);
     }
-    /*public class ListRepository<T> : IRepository<T>
+    public class ListRepository<T> : List<T>, IRepository<T>
     {
         private List<T> items =  new List<T>();
         public IEnumerable<T> Items => items;
@@ -29,15 +29,15 @@ namespace Budget2._0
             items.Remove(item);
         }
 
-        public IEnumerator<T> GetEnumerator()
-        {
-            return items?.GetEnumerator();
-        }
+        //public IEnumerator<T> GetEnumerator()
+        //{
+        //    return items?.GetEnumerator();
+        //}
 
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            return this.GetEnumerator();
-        }
+       // IEnumerator IEnumerable.GetEnumerator()
+        //{
+        //    return this.GetEnumerator();
+        //}
     }
         public interface IAppData
     {
@@ -102,6 +102,10 @@ namespace Budget2._0
         }
         public WindowAppData()
         {
+            gains = new ListRepository<Income>();
+            losses = new ListRepository<Spending>();
+            categories = new ListRepository<Category>();
+            users = new ListRepository<User>();
             LoadData();
             //TODO here we implement basic categories
         }
