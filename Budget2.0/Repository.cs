@@ -42,8 +42,8 @@ namespace Budget2._0
        
     public class Calculations
     {
-        private IAppData Data { get; set; }
-        public Calculations(IAppData data)
+        private AppData Data { get; set; }
+        public Calculations(AppData data)
         {
             Data = data;
         }
@@ -109,11 +109,11 @@ namespace Budget2._0
             }
             return null;
         }
-        public decimal GetAverage(WindowAppData data)
+        public decimal GetAverage(AppData data)
         {
             throw new NotImplementedException();
         }
-        public decimal GetSmthingbyDate(WindowAppData data, DateTime start, DateTime end)
+        public decimal GetSmthingbyDate(AppData data, DateTime start, DateTime end)
         {
             throw new NotImplementedException();
         }
