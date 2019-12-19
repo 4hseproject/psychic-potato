@@ -19,10 +19,10 @@ namespace Budget2._0
                 return instance;
             }
         }
-        private IAppData appData;
-        public IAppData GetAppData()
+        private AppData appData;
+        public AppData GetAppData()
         {
-            return appData ?? (appData = new WindowAppData());
+            return appData ?? (appData = new AppData());
         }
         private Calculations calculations;
         public Calculations GetCalculations()

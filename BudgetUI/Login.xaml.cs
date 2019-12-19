@@ -18,7 +18,7 @@ namespace BudgetUI
     /// </summary>
     public partial class Login : Window
     {
-        IAppData appData = Factory.Instance.GetAppData();
+        AppData appData = Factory.Instance.GetAppData();
         Calculations calculations = Factory.Instance.GetCalculations();
         public Login()
         {

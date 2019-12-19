@@ -21,7 +21,7 @@ namespace BudgetUI
     /// </summary>
     public partial class MainWindow : Window
     {
-        IAppData appData = Factory.Instance.GetAppData();
+        AppData appData = Factory.Instance.GetAppData();
         Calculations calculations = Factory.Instance.GetCalculations();
         public User User { get; set; }
         public MainWindow(User user)
