@@ -73,5 +73,17 @@ namespace BudgetUI
             else { isSpending = false; }
             calculations.AddFlow(amount, category,comment,isSpending, User);*/
         }
+
+        private void Sum_box_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void Button_setting_Click(object sender, RoutedEventArgs e)
+        {
+            Settings_window sw = new Settings_window();
+            sw.Show();
+            this.Close();
+        }
     }
 }
