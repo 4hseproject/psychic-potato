@@ -11,7 +11,7 @@
         <PasswordBox x:Name="PasswordBox_password" Margin="208,156,208,217"></PasswordBox>
         <Button x:Name="Button_sign_in" Margin="282,236,281,131" FontSize="30" FontWeight="Bold" Background="LightGreen" Click="Button_sign_in_Click">Sign in</Button>
         <Button x:Name="Button_sign_up" Margin="208,320,400,58" FontSize="25" FontWeight="Bold" Background="LightPink" Click="Button_sign_up_Click">Sign up</Button>
-        <Button x:Name="Button_forgot_password" Margin="427,320,207,58" FontSize="18" Background="White">Forgot password</Button>
+        <Button x:Name="Button_forgot_password" Margin="427,320,207,58" FontSize="18" Background="White" Click="Button_forgot_password_Click">Forgot password</Button>
 
 
 

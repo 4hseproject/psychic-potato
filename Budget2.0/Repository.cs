@@ -11,10 +11,10 @@ namespace Budget2._0
     {
         IEnumerable<T> Items { get; }
 
-        void Add(T item);
-        void Remove(T item);
+        //void Add(T item);
+        //void Remove(T item);
     }
-    public class ListRepository<T> : IRepository<T>
+    /*public class ListRepository<T> : IRepository<T>
     {
         private List<T> items =  new List<T>();
         public IEnumerable<T> Items => items;
@@ -197,5 +197,5 @@ namespace Budget2._0
             throw new NotImplementedException();
         }
         //TODO all logic functions go here 
-    }
+    }*/
 }

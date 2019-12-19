@@ -21,8 +21,8 @@ namespace BudgetUI
     /// </summary>
     public partial class MainWindow : Window
     {
-        IAppData appData = Factory.Instance.GetAppData();
-        Calculations calculations = Factory.Instance.GetCalculations();
+        //IAppData appData = Factory.Instance.GetAppData();
+        //Calculations calculations = Factory.Instance.GetCalculations();
         public User User { get; set; }
         public MainWindow(User user)
         {
@@ -63,7 +63,7 @@ namespace BudgetUI
             }
             
             category.Name = Category_box.SelectedItem.ToString();
-            foreach (Category el in appData.categories)
+            /*foreach (Category el in appData.categories)
             {
                 if (el.Name == category.Name)
                     category = el;
@@ -71,7 +71,7 @@ namespace BudgetUI
             if (Inc_Spend.SelectedItem.ToString().ToLower() == "spending")
             { isSpending = true; }
             else { isSpending = false; }
-            calculations.AddFlow(amount, category,comment,isSpending, User);
+            calculations.AddFlow(amount, category,comment,isSpending, User);*/
         }
     }
 }
