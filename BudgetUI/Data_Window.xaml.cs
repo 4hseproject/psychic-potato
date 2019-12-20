@@ -33,8 +33,8 @@ namespace BudgetUI
             this.EndDt = end;
             this.Category = category;
             this.User = User;
-            TextBlock_start.Text = start.ToString();
-            TextBlock_end.Text = end.ToString();
+            TextBlock_start.Text = start.Date.ToString();
+            TextBlock_end.Text = end.Date.ToString();
             List<DataVisualisationNoCatSelection> dataVisualisations = new List<DataVisualisationNoCatSelection>();
             if(category == null)
             {
@@ -42,7 +42,7 @@ namespace BudgetUI
                 {
                     if (DateTime.Compare(el.TransactionDt, start) >= 0 && DateTime.Compare(el.TransactionDt, end) <= 0 && el.Category != null)
                     {
-                        var data = new DataVisualisationNoCatSelection(el.Amount.ToString(), el.TransactionDt, "Income", el.Category.Name);
+                        var data = new DataVisualisationNoCatSelection(el.Amount.ToString(), el.TransactionDt.Date, "Income", el.Category.Name);
                         data.CategoryName = el.Comment;
                         dataVisualisations.Add(data);
                     }
@@ -51,7 +51,7 @@ namespace BudgetUI
                 {
                     if (DateTime.Compare(el.TransactionDt, start) >= 0 && DateTime.Compare(el.TransactionDt, end) <= 0 && el.Category != null)
                     {
-                        var data = new DataVisualisationNoCatSelection(el.Amount.ToString(), el.TransactionDt, "Spending", el.Category.Name);
+                        var data = new DataVisualisationNoCatSelection(el.Amount.ToString(), el.TransactionDt.Date, "Spending", el.Category.Name);
                         data.Comment = el.Comment;
                         dataVisualisations.Add(data);
                     }

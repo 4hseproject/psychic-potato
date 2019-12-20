@@ -29,6 +29,10 @@ namespace BudgetUI
             this.User = user;
             hasBeenClicked = false;
             hasBeenClicked1 = false;
+            foreach(Category el in appData.categories)
+            {
+                ComboBox_ChooseCategory.Items.Add(el.Name);
+            }
         }
 
         private void Back_Button_Click(object sender, RoutedEventArgs e)
@@ -53,7 +57,8 @@ namespace BudgetUI
                 MessageBox.Show("Please enter the dates in correct format", "Incorrect Input");
                 return;
             }
-
+            result = result.Date;
+            result2 = result2.Date;
             Data_Window dw = new Data_Window(User,result, result2,category);
             dw.Show();
             this.Close();
