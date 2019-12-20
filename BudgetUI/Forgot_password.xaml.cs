@@ -9,6 +9,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Budget2._0;
 
 namespace BudgetUI
 {
@@ -17,6 +18,8 @@ namespace BudgetUI
     /// </summary>
     public partial class Forgot_password : Window
     {
+        AppData appData = Factory.Instance.GetAppData();
+        Calculations calculations = Factory.Instance.GetCalculations();
         public Forgot_password()
         {
             InitializeComponent();
@@ -27,6 +30,19 @@ namespace BudgetUI
             Login lgbt = new Login();
             lgbt.Show();
             this.Close();
+        }
+
+        private void Button_show_question_Click(object sender, RoutedEventArgs e)
+        {
+            if (calculations.Qestion_per_login(TextBox_login.Text.Trim()) != null)
+            {
+                TextBlock_question.Text = calculations.Qestion_per_login(TextBox_login.Text.Trim());
+            }
+            else
+            {
+                TextBlock_question.Text = "No user with this Login";
+            }
+            TextBox_login.Text = "";
         }
     }
 }

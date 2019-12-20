@@ -142,6 +142,18 @@ namespace Budget2._0
             }
             return flows;
         }
+
+        public string Qestion_per_login(string login) 
+        {
+            foreach (var user  in Data.users)
+            {
+                if (user.Login == login)
+                {
+                    return user.Question;
+                }
+            }
+            return null;
+        }
         //TODO all logic functions go here 
     }
 }
