@@ -61,6 +61,8 @@ namespace BudgetUI
 
         private void TextBox_name_TextChanged(object sender, TextChangedEventArgs e)
         {
+            TextBox_name.Text = "";
+        }
 
             TextBox_Answer.Text = "";
 
