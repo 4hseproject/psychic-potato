@@ -126,7 +126,12 @@ namespace BudgetUI
 
         private void Comment_box_GotFocus(object sender, RoutedEventArgs e)
         {
-
+            if (!hasBeenClicked)
+            {
+                TextBox box = sender as TextBox;
+                box.Text = String.Empty;
+                hasBeenClicked = true;
+            }
         }
     }
 }
