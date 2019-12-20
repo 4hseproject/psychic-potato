@@ -57,5 +57,11 @@ namespace BudgetUI
             else
                 MessageBox.Show("Login cannot be empty");
         }
+
+        private void TextBox_name_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            TextBox_name.Text = "";
+        }
+
     }
 }
