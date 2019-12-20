@@ -59,13 +59,9 @@ namespace BudgetUI
                 MessageBox.Show("Login cannot be empty");
         }
 
-        private void TextBox_name_TextChanged(object sender, TextChangedEventArgs e)
+        private void TextBox_Answer_TextChanged(object sender, TextChangedEventArgs e)
         {
-            TextBox_name.Text = "";
-        }
-
             TextBox_Answer.Text = "";
-
         }
 
         bool hasBeenClicked = false;
@@ -77,6 +73,11 @@ namespace BudgetUI
                 box.Text = String.Empty;
                 hasBeenClicked = true;
             }
+        }
+
+        private void TextBox_name_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }
