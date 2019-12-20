@@ -43,15 +43,30 @@ namespace BudgetUI
                 {
                     if (Decimal.TryParse(TextBox_budget.Text, out decimal budget))
                     {
-                        if (calculations.AddUser(TextBox_name.Text, PasswordBox_password.Password, budget, TextBox_Answer.Text, Combobox_questions.SelectedItem.ToString()))
+                        if (Combobox_questions.SelectedIndex != -1)
                         {
-                            Login lw = new Login();
-                            lw.Show();
-                            this.Close();
+                            if (TextBox_Answer.Text.Length > 0)
+                            {
+                                if (calculations.AddUser(TextBox_name.Text, PasswordBox_password.Password, budget, TextBox_Answer.Text, Combobox_questions.SelectedItem.ToString()))
+                                {
+                                    Login lw = new Login();
+                                    lw.Show();
+                                    this.Close();
+
+                                }
+                                else
+                                {
+                                    MessageBox.Show("User already exists");
+                                } 
+                            }
+                            else
+                            {
+                                MessageBox.Show("otvet zapili, horoshiy chelovek", "кря");
+                            }
                         }
                         else
                         {
-                            MessageBox.Show("User already exists");
+                            MessageBox.Show("chooce question", "кря");
                         }
                     }
                     else
@@ -65,10 +80,7 @@ namespace BudgetUI
                 MessageBox.Show("Login cannot be empty");
         }
 
-        private void TextBox_name_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            TextBox_name.Text = "";
-        }
+
         //private void TextBox_Answer_Focus(object sender, RoutedEventArgs e)
         //{
             //if (!hasBeenClicked)
