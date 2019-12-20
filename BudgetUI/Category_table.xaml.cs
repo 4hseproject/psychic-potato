@@ -32,8 +32,8 @@ namespace BudgetUI
             this.EndDt = end;
             this.Category = category;
             this.User = User;
-            TextBlock_start.Text = start.Date.ToString();
-            TextBlock_end.Text = end.Date.ToString();
+            TextBlock_start.Text = start.ToShortDateString();
+            TextBlock_end.Text = end.ToShortDateString();
             List<DataVisualisationGeneral> dataVisualisations = new List<DataVisualisationGeneral>();
             if (Category.Name == "Income")
             {
