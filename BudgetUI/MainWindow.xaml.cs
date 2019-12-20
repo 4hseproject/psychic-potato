@@ -25,6 +25,8 @@ namespace BudgetUI
         Calculations calculations = Factory.Instance.GetCalculations();
         public bool hasBeenClicked { get; set; }
         public bool hasBeenClicked1 { get; set; }
+        public bool flag1 { get; set; }
+        public bool flag2 { get; set; }
         public User User { get; set; }
         public MainWindow(User user)
         {
@@ -69,6 +71,7 @@ namespace BudgetUI
 
         private void Button_Click_Add(object sender, RoutedEventArgs e)
         {
+            
             decimal amount;
             bool isSpending;
             string comment;
@@ -111,11 +114,16 @@ namespace BudgetUI
             if (Inc_Spend.SelectedItem.ToString().ToLower() == "spending")
             { isSpending = true; }
             else { isSpending = false; }
+            if (User.OverallBalance > 0)
+                flag1 = true;
+            else
+                flag1 = false;
             User = calculations.AddFlow(amount, category,comment,isSpending, User);
-            if (User.OverallBalance <= 0)
+            if (User.OverallBalance <= 0 && flag1)
             {
                 MessageBox.Show("Need More Gold", "Your funds are running low", MessageBoxButton.OK, MessageBoxImage.Exclamation);
             }
+            Balance_box.Text = User.OverallBalance.ToString();
             //Balance_box.Text = calculations.CalculateBalance(Decimal.Parse(Balance_box.Text), Decimal.Parse(Sum_box.Text), isSpending).ToString();
             Sum_box.Text = "";
             Comment_box.Text = "";
