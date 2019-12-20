@@ -47,11 +47,6 @@ namespace BudgetUI
             var result = new DateTime();
             var result2 = new DateTime();
             var category = new Category();
-            if (ComboBox_ChooseCategory.SelectedIndex != -1)
-                category = calculations.GetCategory(ComboBox_ChooseCategory.SelectedItem.ToString());
-            else
-                category = null;
-            // todo check that while part works correctly
             if (!DateTime.TryParse(TextBox_Start.Text, out result) || !DateTime.TryParse(TextBox_End.Text, out result2))
             {
                 MessageBox.Show("Please enter the dates in correct format", "Incorrect Input");
@@ -59,9 +54,24 @@ namespace BudgetUI
             }
             result = result.Date;
             result2 = result2.Date;
-            Data_Window dw = new Data_Window(User,result, result2,category);
-            dw.Show();
-            this.Close();
+            if (ComboBox_ChooseCategory.SelectedIndex != -1)
+            { 
+                category = calculations.GetCategory(ComboBox_ChooseCategory.SelectedItem.ToString());
+                Category_table cw = new Category_table(User, result, result2,category);
+                cw.Show();
+                this.Close();
+            }
+            else
+            {
+                category = null;
+                Data_Window dw = new Data_Window(User, result, result2);
+                dw.Show();
+                this.Close();
+            }
+                
+            // todo check that while part works correctly
+            
+            
         }
 
         private void TextBox_Start_GotFocus(object sender, RoutedEventArgs e)
