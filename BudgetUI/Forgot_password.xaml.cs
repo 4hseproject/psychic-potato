@@ -22,9 +22,11 @@ namespace BudgetUI
         AppData appData = Factory.Instance.GetAppData();
         Calculations calculations = Factory.Instance.GetCalculations();
         public string login;
+        public bool hasBeenClicked { get; set; }
         public Forgot_password()
         {
             InitializeComponent();
+            hasBeenClicked = false;
             Textbox_answer.Visibility = Visibility.Hidden;
             Button_show_password.Visibility = Visibility.Hidden;
         }
@@ -68,6 +70,21 @@ namespace BudgetUI
             else
             {
                 MessageBox.Show("Wrong answer", "кря");
+            }
+        }
+
+        private void TextBox_login_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void TextBox_login_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (!hasBeenClicked)
+            {
+                TextBox box = sender as TextBox;
+                box.Text = String.Empty;
+                hasBeenClicked = true;
             }
         }
     }
