@@ -32,6 +32,8 @@ namespace BudgetUI
             this.EndDt = end;
             this.Category = category;
             this.User = User;
+            TextBlock_start.Text = start.ToString();
+            TextBlock_end.Text = end.ToString();
             List<IFlow> flows = new List<IFlow>();
             if (Category == null)
             {
