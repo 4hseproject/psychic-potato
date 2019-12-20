@@ -23,10 +23,12 @@ namespace BudgetUI
         Calculations calculations = Factory.Instance.GetCalculations();
         public string login;
         public bool hasBeenClicked { get; set; }
+        public bool hasBeenClicked1 { get; set; }
         public Forgot_password()
         {
             InitializeComponent();
             hasBeenClicked = false;
+            hasBeenClicked1 = false;
             Textbox_answer.Visibility = Visibility.Hidden;
             Button_show_password.Visibility = Visibility.Hidden;
         }
@@ -85,6 +87,16 @@ namespace BudgetUI
                 TextBox box = sender as TextBox;
                 box.Text = String.Empty;
                 hasBeenClicked = true;
+            }
+        }
+
+        private void Textbox_answer_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (!hasBeenClicked1)
+            {
+                TextBox box = sender as TextBox;
+                box.Text = String.Empty;
+                hasBeenClicked1 = true;
             }
         }
     }
