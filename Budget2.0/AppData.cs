@@ -68,6 +68,19 @@ namespace Budget2._0
             gains = Deserialize<List<Income>>(GainsFileName);
             losses = Deserialize<List<Spending>>(LossesFileName);
             categories = Deserialize<List<Category>>(CategoriesFileName);
+            foreach (Category el in categories)
+            {
+                foreach(Income ele in gains)
+                {
+                    if (ele.CatId == el.ID)
+                        ele.Category = el;
+                }
+                foreach(Spending elem in losses)
+                {
+                    if (elem.CatId == el.ID)
+                        elem.Category = el;
+                }
+            }
         }
         public AppData()
         {

@@ -16,8 +16,8 @@
                 <GridView>
                     <GridViewColumn DisplayMemberBinding="{Binding Path=CategoryName}" Width="150">Category</GridViewColumn>
                     <GridViewColumn DisplayMemberBinding="{Binding Path=Amount}" Width="200">Spendings</GridViewColumn>
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=TransactionDt}" Width="150">Date</GridViewColumn>
-                    <GridViewColumn Width="200">Comment</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Date}" Width="150">Date</GridViewColumn>
+                    <GridViewColumn Width="200" DisplayMemberBinding="{Binding Path=Comment}">Comment</GridViewColumn>
                 </GridView>
             </ListView.View>
 
