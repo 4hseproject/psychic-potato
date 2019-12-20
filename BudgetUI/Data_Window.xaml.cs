@@ -35,29 +35,30 @@ namespace BudgetUI
             this.User = User;
             TextBlock_start.Text = start.ToString();
             TextBlock_end.Text = end.ToString();
-            List<DataVisualisation> dataVisualisations = new List<DataVisualisation>();
-            /*if(category == null)
+            List<DataVisualisationNoCatSelection> dataVisualisations = new List<DataVisualisationNoCatSelection>();
+            if(category == null)
             {
                 foreach (Income el in appData.gains)
                 {
-                    if (DateTime.Compare(el.TransactionDt, start) >= 0 && DateTime.Compare(el.TransactionDt, end) <= 0)
+                    if (DateTime.Compare(el.TransactionDt, start) >= 0 && DateTime.Compare(el.TransactionDt, end) <= 0 && el.Category != null)
                     {
-                        var data = new DataVisualisation();
-                        data.Amount = el.Amount.ToString();
-                        data.CategoryName = el.Category.Name;
-                        data.Date = el.TransactionDt;
-                        dataVisualisations.Add();
+                        var data = new DataVisualisationNoCatSelection(el.Amount.ToString(), el.TransactionDt, "Income", el.Category.Name);
+                        dataVisualisations.Add(data);
                     }
                 }
                 foreach (Spending el in appData.losses)
                 {
-                    if (DateTime.Compare(el.TransactionDt, start) >= 0 && DateTime.Compare(el.TransactionDt, end) <= 0)
-                        flows.Add(el);
+                    if (DateTime.Compare(el.TransactionDt, start) >= 0 && DateTime.Compare(el.TransactionDt, end) <= 0 && el.Category != null)
+                    {
+                        var data = new DataVisualisationNoCatSelection(el.Amount.ToString(), el.TransactionDt, "Spending", el.Category.Name);
+                        dataVisualisations.Add(data);
+                    }
                 }
-                calculations.SortByDate(flows);
-                spendingsList.ItemsSource = flows;
+                calculations.SortByDate(dataVisualisations);
+                spendingsList.ItemsSource = dataVisualisations;
                 //TODO show results for all categories
             }
+            /*
             else
             {
                 foreach (Income el in appData.gains)
@@ -74,7 +75,7 @@ namespace BudgetUI
                 spendingsList.ItemsSource = flows;
                 //TODO show results for selected category
             }
-            /*
+            */
             /*List<IFlow> flows = new List<IFlow>();
             {
                 foreach(Income el in appData.gains)
