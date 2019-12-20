@@ -81,5 +81,10 @@ namespace BudgetUI
             Inc_Spend.SelectedIndex = -1;
             Category_box.SelectedIndex = -1;
         }
+
+        private void Button_setting_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
     }
 }
