@@ -48,9 +48,10 @@ namespace BudgetUI
             else
                 category = null;
             // todo check that while part works correctly
-            while (!DateTime.TryParse(TextBox_Start.Text, out result) || !DateTime.TryParse(TextBox_End.Text, out result2))
+            if (!DateTime.TryParse(TextBox_Start.Text, out result) || !DateTime.TryParse(TextBox_End.Text, out result2))
             {
                 MessageBox.Show("Please enter the dates in correct format", "Incorrect Input");
+                return;
             }
 
             Data_Window dw = new Data_Window(User,result, result2,category);
