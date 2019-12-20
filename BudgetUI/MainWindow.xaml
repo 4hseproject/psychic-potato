@@ -27,10 +27,7 @@
         <TextBlock FontSize="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,9,0,0" Grid.Row="1" Grid.Column="1">Category:</TextBlock>
         <TextBlock FontSize="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,6,0,0" Grid.Row="1">Spending/Income:</TextBlock>
         <Button FontSize="30" Margin="10,26,10,31" Grid.Row="3" Background="LightGreen" FontWeight="Bold" Click="Button_Click_Add">Add</Button>
-        <Button x:Name="Button_setting" Grid.Column="1" Margin="206,10,12,28" Click="Button_setting_Click_1" >
-            <StackPanel Orientation="Horizontal">
-                <Image Source="setting_image.png"/>
-            </StackPanel>
+        <Button x:Name="Button_setting" Grid.Column="1" Margin="206,10,12,28" Click="Button_setting_Click_1" >Settings
         </Button>
 
 
