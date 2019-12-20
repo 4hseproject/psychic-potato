@@ -13,13 +13,11 @@ namespace Budget2._0.models
     public class DataVisualisationNoCatSelection:DataVisualisationGeneral
     {
         
-        public string IncomeOrSpending{ get; set; }
         public string CategoryName { get; set; }
-        public DataVisualisationNoCatSelection(string amount, DateTime date, string incspend, string CategoryName)
+        public DataVisualisationNoCatSelection(string amount, DateTime date, string CategoryName)
         {
             this.Amount = amount;
             this.Date = date;
-            this.IncomeOrSpending = incspend;
             this.CategoryName = CategoryName;
         }
     }

@@ -29,10 +29,11 @@ namespace BudgetUI
             hasBeenClicked = false;
             hasBeenClicked1 = false;
             hasBeenClicked2 = false;
-            Combobox_questions.Items.Add("Вилкой раз или ...?");
+            Combobox_questions.Items.Add("Почем гараж?");
             Combobox_questions.Items.Add("Есть 2 стула: какой выберешь?");
             Combobox_questions.Items.Add("Номер твоей мамы");
-            
+            Combobox_questions.Items.Add("Имя питомца/брата");
+
 
             TextBox_Answer.Text = "Answer";
             

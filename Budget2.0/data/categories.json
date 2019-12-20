@@ -15,6 +15,30 @@
   },
   {
     "Name": "Income",
-    "ID" :  "4"
+    "ID": "4"
+  },
+  {
+    "Name": "Taxi",
+    "ID": "5"
+  },
+  {
+    "Name": "Food",
+    "ID": "6"
+  },
+  {
+    "Name": "Alcohol",
+    "ID": "7"
+  },
+  {
+    "Name": "Party",
+    "ID": "8"
+  },
+  {
+    "Name": "Drugs",
+    "ID": "9"
+  },
+  {
+    "Name": "Condoms",
+    "ID": "10"
   }
 ]

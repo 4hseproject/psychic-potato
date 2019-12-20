@@ -23,43 +23,38 @@ namespace BudgetUI
         AppData appData = Factory.Instance.GetAppData();
         Calculations calculations = Factory.Instance.GetCalculations();
         public DateTime EndDt { get; set; }
-        public Category Category { get; set; }
         public User User { get; set; }
-        public Data_Window(User User, DateTime start, DateTime end, Category category)
+        public Data_Window(User User, DateTime start, DateTime end)
         {
             
             InitializeComponent();
             this.StartDt = start;
             this.EndDt = end;
-            this.Category = category;
             this.User = User;
-            TextBlock_start.Text = start.Date.ToString();
-            TextBlock_end.Text = end.Date.ToString();
+            TextBlock_start.Text = start.ToShortDateString();
+            TextBlock_end.Text = end.ToShortDateString();
             List<DataVisualisationNoCatSelection> dataVisualisations = new List<DataVisualisationNoCatSelection>();
-            if(category == null)
+            foreach (Income el in appData.gains)
             {
-                foreach (Income el in appData.gains)
+                if (el.UID == User.UID && DateTime.Compare(el.TransactionDt, start) >= 0 && DateTime.Compare(el.TransactionDt, end) <= 0 && el.Category != null)
                 {
-                    if (DateTime.Compare(el.TransactionDt, start) >= 0 && DateTime.Compare(el.TransactionDt, end) <= 0 && el.Category != null)
-                    {
-                        var data = new DataVisualisationNoCatSelection(el.Amount.ToString(), el.TransactionDt.Date, "Income", el.Category.Name);
-                        data.CategoryName = el.Comment;
-                        dataVisualisations.Add(data);
-                    }
+                    var data = new DataVisualisationNoCatSelection(el.Amount.ToString(), el.TransactionDt.Date, el.Category.Name);
+                    data.Comment = el.Comment;
+                    dataVisualisations.Add(data);
                 }
-                foreach (Spending el in appData.losses)
-                {
-                    if (DateTime.Compare(el.TransactionDt, start) >= 0 && DateTime.Compare(el.TransactionDt, end) <= 0 && el.Category != null)
-                    {
-                        var data = new DataVisualisationNoCatSelection(el.Amount.ToString(), el.TransactionDt.Date, "Spending", el.Category.Name);
-                        data.Comment = el.Comment;
-                        dataVisualisations.Add(data);
-                    }
-                }
-                calculations.SortByDate(dataVisualisations);
-                spendingsList.ItemsSource = dataVisualisations;
-                //TODO show results for all categories
             }
+            foreach (Spending el in appData.losses)
+            {
+                if (el.UID == User.UID && DateTime.Compare(el.TransactionDt, start) >= 0 && DateTime.Compare(el.TransactionDt, end) <= 0 && el.Category != null)
+                {
+                    var data = new DataVisualisationNoCatSelection(el.Amount.ToString(), el.TransactionDt.Date, el.Category.Name);
+                    data.Comment = el.Comment;
+                    dataVisualisations.Add(data);
+                }
+            }
+            calculations.SortByDate(dataVisualisations);
+            spendingsList.ItemsSource = dataVisualisations;
+                //TODO show results for all categories
             /*
             else
             {
