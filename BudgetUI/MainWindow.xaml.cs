@@ -52,7 +52,12 @@ namespace BudgetUI
 
         private void Category_box_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            if (Inc_Spend.SelectedItem is "Income")
+            {
+                Category_box.SelectedIndex = -1;
+                MessageBox.Show("you cannot select category for income");
+                
+            }
         }
 
         private void Button_Click_Add(object sender, RoutedEventArgs e)
@@ -76,6 +81,7 @@ namespace BudgetUI
             {
                 if (Inc_Spend.SelectedItem is "Income")
                 {
+                    Category_box.SelectedIndex = -1;
                     category.Name = "Income";
                 }
                 else
