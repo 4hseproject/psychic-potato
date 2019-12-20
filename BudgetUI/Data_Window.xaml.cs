@@ -51,6 +51,18 @@ namespace BudgetUI
             }
             else
             {
+                foreach (Income el in appData.gains)
+                {
+                    if (DateTime.Compare(el.TransactionDt, start) >= 0 && DateTime.Compare(el.TransactionDt, end) <= 0 && el.Category == category)
+                        flows.Add(el);
+                }
+                foreach (Spending el in appData.losses)
+                {
+                    if (DateTime.Compare(el.TransactionDt, start) >= 0 && DateTime.Compare(el.TransactionDt, end) <= 0 && el.Category == category)
+                        flows.Add(el);
+                }
+                calculations.SortByDate(flows);
+                spendingsList.ItemsSource = flows;
                 //TODO show results for selected category
             }
         }
