@@ -19,6 +19,8 @@ namespace BudgetUI
     public partial class Data_Window : Window
     {
         public DateTime StartDt { get; set; }
+        AppData appData = Factory.Instance.GetAppData();
+        Calculations calculations = Factory.Instance.GetCalculations();
         public DateTime EndDt { get; set; }
         public Category Category { get; set; }
         public User User { get; set; }
@@ -30,12 +32,39 @@ namespace BudgetUI
             this.EndDt = end;
             this.Category = category;
             this.User = User;
+            TextBlock_start.Text = start.ToString();
+            TextBlock_end.Text = end.ToString();
+            List<IFlow> flows = new List<IFlow>();
             if (Category == null)
             {
+                foreach(Income el in appData.gains)
+                {
+                    if (DateTime.Compare(el.TransactionDt,start) >= 0 && DateTime.Compare(el.TransactionDt, end)<=0)
+                        flows.Add(el);
+                }
+                foreach(Spending el in appData.losses)
+                {
+                    if (DateTime.Compare(el.TransactionDt, start) >= 0 && DateTime.Compare(el.TransactionDt, end) <= 0)
+                        flows.Add(el);
+                }
+                calculations.SortByDate(flows);
+                spendingsList.ItemsSource = flows;
                 //TODO show results for all categories
             }
             else
             {
+                foreach (Income el in appData.gains)
+                {
+                    if (DateTime.Compare(el.TransactionDt, start) >= 0 && DateTime.Compare(el.TransactionDt, end) <= 0 && el.Category == category)
+                        flows.Add(el);
+                }
+                foreach (Spending el in appData.losses)
+                {
+                    if (DateTime.Compare(el.TransactionDt, start) >= 0 && DateTime.Compare(el.TransactionDt, end) <= 0 && el.Category == category)
+                        flows.Add(el);
+                }
+                calculations.SortByDate(flows);
+                spendingsList.ItemsSource = flows;
                 //TODO show results for selected category
             }
         }

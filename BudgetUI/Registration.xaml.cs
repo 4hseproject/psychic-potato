@@ -30,6 +30,8 @@ namespace BudgetUI
             Combobox_questions.Items.Add("Номер твоей мамы");
 
 
+            TextBox_Answer.Text = "Answer";
+            
         }
 
         private void Button_Enter_Click(object sender, RoutedEventArgs e)
@@ -69,5 +71,19 @@ namespace BudgetUI
             TextBox_name.Text = "";
         }
 
+            TextBox_Answer.Text = "";
+
+        }
+
+        bool hasBeenClicked = false;
+        private void TextBox_Answer_Focus(object sender, RoutedEventArgs e)
+        {
+            if (!hasBeenClicked)
+            {
+                TextBox box = sender as TextBox;
+                box.Text = String.Empty;
+                hasBeenClicked = true;
+            }
+        }
     }
 }
