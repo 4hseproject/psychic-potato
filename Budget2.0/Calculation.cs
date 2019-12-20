@@ -128,6 +128,7 @@ namespace Budget2._0
                     // been gap sorted save a[i] in temp and 
                     // make a hole at position i 
                     DateTime temp = flows[i].TransactionDt;
+                    IFlow interim = flows[i];
 
                     // shift earlier gap-sorted elements up until 
                     // the correct location for a[i] is found 
@@ -137,7 +138,7 @@ namespace Budget2._0
 
                     // put temp (the original a[i])  
                     // in its correct location 
-                    flows[j].TransactionDt = temp;
+                    flows[j] = interim;
                 }
             }
             return flows;
