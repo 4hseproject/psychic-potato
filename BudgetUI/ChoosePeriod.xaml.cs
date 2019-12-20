@@ -45,6 +45,7 @@ namespace BudgetUI
             {
                 MessageBox.Show("Please enter the dates in correct format", "Incorrect Input");
             }
+
             Data_Window dw = new Data_Window(User,result, result2,category);
             dw.Show();
             this.Close();
