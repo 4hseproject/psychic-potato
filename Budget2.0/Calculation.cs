@@ -144,7 +144,7 @@ namespace Budget2._0
             }
             return flows;
         }
-        public List<DataVisualisation> SortByDate(List<DataVisualisation> flows)
+        public List<DataVisualisationNoCatSelection> SortByDate(List<DataVisualisationNoCatSelection> flows)
         {
             int n = flows.Count;
 
@@ -162,7 +162,7 @@ namespace Budget2._0
                     // been gap sorted save a[i] in temp and 
                     // make a hole at position i 
                     DateTime temp = flows[i].Date;
-                    DataVisualisation interim = flows[i];
+                    DataVisualisationNoCatSelection interim = flows[i];
 
                     // shift earlier gap-sorted elements up until 
                     // the correct location for a[i] is found 
@@ -189,6 +189,31 @@ namespace Budget2._0
             }
             return null;
         }
+
+        public string Answer_per_login(string login)
+        {
+            foreach (var user in Data.users)
+            {
+                if (user.Login == login)
+                {
+                    return user.Answer;
+                }
+            }
+            return null;
+        }
+
+        public string Password_per_login(string login)
+        {
+            foreach (var user in Data.users)
+            {
+                if (user.Login == login)
+                {
+                    return user.Password;
+                }
+            }
+            return null;
+        }
+
         //TODO all logic functions go here 
     }
 }
