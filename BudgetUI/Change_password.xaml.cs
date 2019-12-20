@@ -13,32 +13,23 @@ using System.Windows.Shapes;
 namespace BudgetUI
 {
     /// <summary>
-    /// Логика взаимодействия для Settings_window.xaml
+    /// Логика взаимодействия для Change_password.xaml
     /// </summary>
-    public partial class Settings_window : Window
+    public partial class Change_password : Window
     {
         public bool hasBeenClicked { get; set; }
         public bool hasBeenClicked1 { get; set; }
-        public Settings_window()
+        public bool hasBeenClicked2 { get; set; }
+        public Change_password()
         {
             InitializeComponent();
             hasBeenClicked = false;
             hasBeenClicked1 = false;
-        }
-
-        private void Button_MainMenu_Click(object sender, RoutedEventArgs e)
-        {
-            //MainWindow mw = new MainWindow(user);
-            //mw.Show();
-            //this.Close();
-        }
-
-        private void Button_ok_Click(object sender, RoutedEventArgs e)
-        {
+            hasBeenClicked2 = false;
 
         }
 
-        private void TextBox_Name_GotFocus(object sender, RoutedEventArgs e)
+        private void TextBox_oldpassword_GotFocus(object sender, RoutedEventArgs e)
         {
             if (!hasBeenClicked)
             {
@@ -48,7 +39,7 @@ namespace BudgetUI
             }
         }
 
-        private void TextBox_Budget_GotFocus(object sender, RoutedEventArgs e)
+        private void TextBox_newpassword_GotFocus(object sender, RoutedEventArgs e)
         {
             if (!hasBeenClicked1)
             {
@@ -56,6 +47,21 @@ namespace BudgetUI
                 box.Text = String.Empty;
                 hasBeenClicked1 = true;
             }
+        }
+
+        private void TextBox_repeatpassword_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (!hasBeenClicked2)
+            {
+                TextBox box = sender as TextBox;
+                box.Text = String.Empty;
+                hasBeenClicked2 = true;
+            }
+        }
+
+        private void Button_main_menu_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

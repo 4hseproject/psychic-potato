@@ -8,11 +8,11 @@
         Title="Settings_window" Height="450" Width="600">
     <Grid>
         <Button Margin="338,330,10,10" FontSize="40" FontWeight="Bold" Background="LightPink" Click="Button_MainMenu_Click">Main Menu</Button>
-        <Button x:Name="Button_ok" Margin="70,330,278,10" FontSize="40" FontWeight="Bold" Background="LightGreen" Click="Button_ok_Click">OK</Button>
-        <TextBox x:Name="TextBox_Name" FontSize="40" VerticalAlignment="Top" Margin="10,77,278,0">Name</TextBox>
-        <TextBox x:Name="TextBox_Budget" FontSize="40" VerticalAlignment="Top" Margin="10,147,278,0">Budget</TextBox>
-        <TextBox x:Name="TextBox_Password" FontSize="40" VerticalAlignment="Top" Margin="10,256,278,0"></TextBox>
+        <Button x:Name="Button_ok" Margin="70,330,278,10" FontSize="37" FontWeight="Bold" Background="LightGreen" Click="Button_ok_Click">OK</Button>
+        <TextBox x:Name="TextBox_Name" FontSize="37" VerticalAlignment="Top" Margin="10,77,278,0" GotFocus="TextBox_Name_GotFocus">Name</TextBox>
+        <TextBox x:Name="TextBox_Budget" FontSize="37" VerticalAlignment="Top" Margin="10,162,278,0" GotFocus="TextBox_Budget_GotFocus">Budget</TextBox>
+        <Button Margin="10,236,278,122" FontSize="37" FontWeight="Bold" Background="LightYellow">Change password</Button>
         <TextBlock Margin="0,10,0,365" FontSize="40" FontWeight="Bold" HorizontalAlignment="Center">Settings</TextBlock>
-        <TextBlock FontSize="40" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,202,0,0">Password:</TextBlock>
+        
     </Grid>
 </Window>
