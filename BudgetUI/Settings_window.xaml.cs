@@ -81,5 +81,12 @@ namespace BudgetUI
                 hasBeenClicked1 = true;
             }
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Change_password cp = new Change_password(User);
+            cp.Show();
+            this.Close();
+        }
     }
 }

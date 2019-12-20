@@ -9,6 +9,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Budget2._0;
 
 namespace BudgetUI
 {
@@ -17,11 +18,15 @@ namespace BudgetUI
     /// </summary>
     public partial class Change_password : Window
     {
+        AppData appData = Factory.Instance.GetAppData();
+        Calculations calculations = Factory.Instance.GetCalculations();
         public bool hasBeenClicked { get; set; }
         public bool hasBeenClicked1 { get; set; }
         public bool hasBeenClicked2 { get; set; }
-        public Change_password()
+        public User User { get; set; }
+        public Change_password(User user)
         {
+            this.User = user;
             InitializeComponent();
             hasBeenClicked = false;
             hasBeenClicked1 = false;
@@ -61,7 +66,24 @@ namespace BudgetUI
 
         private void Button_main_menu_Click(object sender, RoutedEventArgs e)
         {
+            MainWindow mw = new MainWindow(User);
+            mw.Show();
+            this.Close();
+        }
 
+        private void Button_ok_Click(object sender, RoutedEventArgs e)
+        {
+            if (TextBox_oldpassword.Text.Length > 0 & TextBox_newpassword.Text == TextBox_repeatpassword.Text & TextBox_repeatpassword.Text.Length >0) 
+            {
+                User = calculations.Changepassword(User, TextBox_newpassword.Text);
+                MainWindow mw = new MainWindow(User);
+                mw.Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Wrong data entered");
+            }
         }
     }
 }
