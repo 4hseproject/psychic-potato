@@ -43,8 +43,7 @@ namespace BudgetUI
                 {
                     if (Decimal.TryParse(TextBox_budget.Text, out decimal budget))
                     {
-
-                        if (calculations.AddUser(TextBox_name.Text, PasswordBox_password.Password, budget))
+                        if (calculations.AddUser(TextBox_name.Text, PasswordBox_password.Password, budget, TextBox_Answer.Text, Combobox_questions.SelectedItem.ToString()))
                         {
                             Login lw = new Login();
                             lw.Show();
@@ -79,5 +78,7 @@ namespace BudgetUI
           //      hasBeenClicked = true;
             //}
         //}
+
+
     }
 }

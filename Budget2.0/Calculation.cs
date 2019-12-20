@@ -59,7 +59,7 @@ namespace Budget2._0
             else
                 return balance + amount;
         }
-        public bool AddUser(string login, string password, decimal balance)
+        public bool AddUser(string login, string password, decimal balance, string answer, string question)
         {
             int id;
             int max = 0; 
@@ -80,6 +80,8 @@ namespace Budget2._0
             user.OverallBalance = balance;
             user.Login = login;
             user.Password = password;
+            user.Answer = answer;
+            user.Question = question;
             Data.users.Add(user);
             Data.SaveData();
             return true;
