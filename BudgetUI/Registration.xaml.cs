@@ -18,8 +18,7 @@ namespace BudgetUI
     /// </summary>
     public partial class Registration : Window
     {
-        //IAppData appData = Factory.Instance.GetAppData();
-        //Calculations calculations = Factory.Instance.GetCalculations();
+
 
         public bool hasBeenClicked { get; set; }
         public bool hasBeenClicked1 { get; set; }

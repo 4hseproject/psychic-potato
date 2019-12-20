@@ -18,6 +18,8 @@ namespace BudgetUI
     /// </summary>
     public partial class Settings_window : Window
     {
+        AppData appData = Factory.Instance.GetAppData();
+        Calculations calculations = Factory.Instance.GetCalculations();
         public bool hasBeenClicked { get; set; }
         public bool hasBeenClicked1 { get; set; }
         public User User { get; set; }
@@ -38,7 +40,26 @@ namespace BudgetUI
 
         private void Button_ok_Click(object sender, RoutedEventArgs e)
         {
-
+            decimal amount;
+            if (TextBox_Name.Text.Length > 0)
+            {
+                if (!Decimal.TryParse(TextBox_Budget.Text, out amount))
+                {
+                    MessageBox.Show("Wrong budget", "BUdGET");
+                }
+                else
+                {
+                    User = calculations.Changebudgetname(User, TextBox_Budget.Text.Trim(), amount);
+                    MainWindow mw = new MainWindow(User);
+                    mw.Show();
+                    this.Close();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Enter name", "ERRRRRRORR");
+                return;
+            }
         }
 
         private void TextBox_Name_GotFocus(object sender, RoutedEventArgs e)
