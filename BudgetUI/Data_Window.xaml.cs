@@ -19,6 +19,8 @@ namespace BudgetUI
     public partial class Data_Window : Window
     {
         public DateTime StartDt { get; set; }
+        AppData appData = Factory.Instance.GetAppData();
+        Calculations calculations = Factory.Instance.GetCalculations();
         public DateTime EndDt { get; set; }
         public Category Category { get; set; }
         public User User { get; set; }
@@ -30,8 +32,19 @@ namespace BudgetUI
             this.EndDt = end;
             this.Category = category;
             this.User = User;
+            List<IFlow> flows = new List<IFlow>();
             if (Category == null)
             {
+                foreach(Income el in appData.gains)
+                {
+                    flows.Add(el);
+                }
+                foreach(Spending el in appData.losses)
+                {
+                    flows.Add(el);
+                }
+                calculations.SortByDate(flows);
+                spendingsList.ItemsSource = flows;
                 //TODO show results for all categories
             }
             else
