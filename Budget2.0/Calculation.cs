@@ -189,6 +189,31 @@ namespace Budget2._0
             }
             return null;
         }
+
+        public string Answer_per_login(string login)
+        {
+            foreach (var user in Data.users)
+            {
+                if (user.Login == login)
+                {
+                    return user.Answer;
+                }
+            }
+            return null;
+        }
+
+        public string Password_per_login(string login)
+        {
+            foreach (var user in Data.users)
+            {
+                if (user.Login == login)
+                {
+                    return user.Password;
+                }
+            }
+            return null;
+        }
+
         //TODO all logic functions go here 
     }
 }

@@ -57,9 +57,13 @@ namespace BudgetUI
 
         private void Button_show_password_click(object sender, RoutedEventArgs e)
         {
-            if (true)
+            var answer = calculations.Answer_per_login(login);
+            if (Textbox_answer.Text.Trim() == answer)
             {
-
+                MessageBox.Show(calculations.Password_per_login(login), "your password");
+                Login lgbt = new Login();
+                lgbt.Show();
+                this.Close();
             }
             else
             {

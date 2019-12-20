@@ -80,15 +80,20 @@ namespace BudgetUI
                 MessageBox.Show("Login cannot be empty");
         }
 
+        private void Button_login_back_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
 
         //private void TextBox_Answer_Focus(object sender, RoutedEventArgs e)
         //{
-            //if (!hasBeenClicked)
-           // {
-                //TextBox box = sender as TextBox;
-              //  box.Text = String.Empty;
-          //      hasBeenClicked = true;
-            //}
+        //if (!hasBeenClicked)
+        // {
+        //TextBox box = sender as TextBox;
+        //  box.Text = String.Empty;
+        //      hasBeenClicked = true;
+        //}
         //}
 
 

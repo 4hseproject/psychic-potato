@@ -15,5 +15,6 @@
         
         <TextBox x:Name="TextBox_Answer" Margin="372,241,28,115"></TextBox>
         <Button x:Name="Button_Enter" Margin="496,324,28,32" FontSize="30" FontWeight="Bold" Background="LightGreen" Click="Button_Enter_Click">Enter</Button>
+        <Button x:Name="Button_login_back" Margin="0,0,676,396" Click="Button_login_back_Click" Content="Back to log in"/>
     </Grid>
 </Window>
