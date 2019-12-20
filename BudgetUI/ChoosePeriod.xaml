@@ -16,13 +16,14 @@
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <TextBlock Grid.Row="1" Margin="0,2,305,0" FontSize="40" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Right">c</TextBlock>
-        <TextBlock Grid.Row="1" FontSize="40" FontWeight="Bold" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,2,341,0" Grid.Column="1" RenderTransformOrigin="0.267,0.113" >по</TextBlock>
-        <TextBox Grid.ColumnSpan="2" Margin="237,17,0,0" FontSize="40" VerticalAlignment="Top" HorizontalAlignment="Left" FontStyle="Italic" FontWeight="Bold">Выберите период</TextBox>
-        <TextBox Name="TextBox_Start" Grid.Row="1" Margin="117,0,0,0" FontSize="40" VerticalAlignment="Top">dd-mm-yyyy</TextBox>
-        <TextBox Name="TextBox_End" Grid.Row="1" Grid.Column="1" Margin="80,0,40,0" FontSize="40" VerticalAlignment="Top">dd-mm-yyyy</TextBox>
-        <ComboBox Name="ComboBox_ChooseCategory" Grid.Row="1" Margin="117,118,0,106" Grid.RowSpan="2"/>
-        <Button Grid.Row="1" Grid.Column="1" Margin="40,121,40,109" FontSize="40" FontWeight="Bold" Background="LightGreen" Click="Go_Button_Click" Grid.RowSpan="2">GO</Button>
-        <Button Grid.Column="1" Grid.Row="2" FontSize="30" FontWeight="Bold" Background="LightPink" Margin="40,77,40,10" Click="Back_Button_Click">Назад</Button>
+        <TextBlock Grid.Row="1" Margin="0,2,285,0" FontSize="40" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Right">from</TextBlock>
+        <TextBlock Grid.Row="1" FontSize="40" FontWeight="Bold" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,2,321,0" Grid.Column="1" RenderTransformOrigin="0.267,0.113" >to</TextBlock>
+        <TextBlock Grid.ColumnSpan="2" Margin="237,25,0,0" FontSize="40" VerticalAlignment="Top" HorizontalAlignment="Left" FontStyle="Italic" FontWeight="Bold">Choose period</TextBlock>
+        <TextBox Name="TextBox_Start" GotFocus="TextBox_Start_GotFocus" Grid.Row="1" Margin="137,0,380,0" FontSize="40" VerticalAlignment="Top" Grid.ColumnSpan="2">dd-mm-yyyy</TextBox>
+        <TextBox Name="TextBox_End" GotFocus="TextBox_End_GotFocus" Grid.Row="1" Grid.Column="1" Margin="100,0,20,0" FontSize="40" VerticalAlignment="Top">dd-mm-yyyy</TextBox>
+        <TextBlock FontSize="40" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="26,69,0,0" Grid.Row="1">Category:</TextBlock>
+        <ComboBox Name="ComboBox_ChooseCategory" Grid.Row="1" Margin="23,128,93,93" Grid.RowSpan="2"/>
+        <Button Grid.Row="1" Grid.Column="1" Margin="40,128,40,93" FontSize="40" FontWeight="Bold" Background="LightGreen" Click="Go_Button_Click" Grid.RowSpan="2">GO</Button>
+        <Button Grid.Row="2" FontSize="30" FontWeight="Bold" Background="LightPink" Margin="40,65,40,12" Click="Back_Button_Click" Grid.Column="1">Назад</Button>
     </Grid>
 </Window>
