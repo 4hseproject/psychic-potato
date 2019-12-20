@@ -47,7 +47,7 @@ namespace BudgetUI
                         {
                             if (TextBox_Answer.Text.Length > 0)
                             {
-                                if (calculations.AddUser(TextBox_name.Text, PasswordBox_password.Password, budget, TextBox_Answer.Text, Combobox_questions.SelectedItem.ToString()))
+                                if (calculations.AddUser(TextBox_name.Text.Trim(), PasswordBox_password.Password, budget, TextBox_Answer.Text.Trim(), Combobox_questions.SelectedItem.ToString()))
                                 {
                                     Login lw = new Login();
                                     lw.Show();
