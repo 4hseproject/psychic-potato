@@ -8,15 +8,16 @@
         Title="Data_Window" Height="450" Width="800">
     <Grid>
         <TextBlock Margin="10,14,526,0" FontSize="23" VerticalAlignment="Top">Your expenses for period:</TextBlock>
-        <TextBox x:Name="TextBlock_start" Margin="280,13,400,0" FontSize="22" VerticalAlignment="Top">22.02.2009</TextBox>
-        <TextBlock FontSize="20" Margin="405,15,379,391">-</TextBlock>
-        <TextBox x:Name="TextBlock_end" Margin="426,15,254,0" FontSize="22" VerticalAlignment="Top">23.02.2009</TextBox>
-        <ListView Name="spendingsList" Margin="160,70,134,0" FontSize="25" FontWeight="Bold">
+        <TextBox x:Name="TextBlock_start" Margin="274,15,392,0" FontSize="22" VerticalAlignment="Top">22.02.2009</TextBox>
+        <TextBlock FontSize="20" Margin="413,18,371,388">-</TextBlock>
+        <TextBox x:Name="TextBlock_end" Margin="429,15,239,0" FontSize="22" VerticalAlignment="Top">23.02.2009</TextBox>
+        <ListView Name="spendingsList" Margin="47,60,47,10" FontSize="25" FontWeight="Bold">
             <ListView.View>
                 <GridView>
                     <GridViewColumn DisplayMemberBinding="{Binding Path=Category.Name}" Width="150">Category</GridViewColumn>
                     <GridViewColumn DisplayMemberBinding="{Binding Path=Amount}" Width="200">Spendings</GridViewColumn>
                     <GridViewColumn DisplayMemberBinding="{Binding Path=TransactionDt}" Width="150">Date</GridViewColumn>
+                    <GridViewColumn Width="200">Comment</GridViewColumn>
                 </GridView>
             </ListView.View>
 

@@ -115,5 +115,10 @@ namespace BudgetUI
         {
             this.Close();
         }
+
+        private void spendingsList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
