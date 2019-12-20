@@ -7,15 +7,15 @@
         mc:Ignorable="d"
         Title="Registration" Height="450" Width="800">
     <Grid>
-        <TextBox x:Name="TextBox_name" GotFocus="TextBox_name_GotFocus" Margin="29,0,371,313" FontSize="37" VerticalAlignment="Bottom">Name</TextBox>
+        <TextBox x:Name="TextBox_name" GotFocus="TextBox_name_GotFocus" Margin="29,0,371,307" FontSize="37" VerticalAlignment="Bottom">Name</TextBox>
         <TextBox x:Name="TextBox_budget" GotFocus="TextBox_budget_GotFocus" Margin="496,0,45,313" FontSize="37" VerticalAlignment="Bottom">Budget</TextBox>
-        <PasswordBox x:Name="PasswordBox_password" Margin="29,0,371,220" FontSize="37" VerticalAlignment="Bottom"></PasswordBox>
-        <ComboBox x:Name="Combobox_questions" Margin="29,245,371,109" FontSize="30"></ComboBox>
-        <TextBlock Margin="0,-17,0,0" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Top" FontWeight="Bold">Registration</TextBlock>
+        <PasswordBox x:Name="PasswordBox_password" Margin="29,0,371,208" FontSize="37" VerticalAlignment="Bottom"></PasswordBox>
+        <ComboBox x:Name="Combobox_questions" Margin="29,255,371,99" FontSize="30"></ComboBox>
+        <TextBlock Margin="0,-7,0,0" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Top" FontWeight="Bold">Registration</TextBlock>
         <TextBox x:Name="TextBox_Answer" GotFocus="TextBox_Answer_GotFocus" Margin="29,0,371,27" FontSize="37" VerticalAlignment="Bottom">Answer</TextBox>
         <Button x:Name="Button_back" Margin="496,260,28,96" FontSize="30" FontWeight="Bold" Background="LightPink" Click="Button_back_Click">Back</Button>
         <Button x:Name="Button_Enter" Margin="496,335,28,27" FontSize="30" FontWeight="Bold" Background="LightGreen" Click="Button_Enter_Click" RenderTransformOrigin="0.513,0.688">OK</Button>
-        <TextBlock Margin="32,96,0,0" FontSize="37" HorizontalAlignment="Left" VerticalAlignment="Top">Password:</TextBlock>
-        <TextBlock FontSize="37" Margin="29,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" Width="281">Secret question</TextBlock>
+        <TextBlock Margin="32,106,0,0" FontSize="37" HorizontalAlignment="Left" VerticalAlignment="Top">Password:</TextBlock>
+        <TextBlock FontSize="37" Margin="29,200,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="281">Secret question</TextBlock>
     </Grid>
 </Window>
