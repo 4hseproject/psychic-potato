@@ -23,6 +23,7 @@ namespace BudgetUI
         public Registration()
         {
             InitializeComponent();
+            TextBox_Answer.Text = "Answer";
             
         }
 
@@ -63,5 +64,19 @@ namespace BudgetUI
             TextBox_name.Text = "";
         }
 
+            TextBox_Answer.Text = "";
+
+        }
+
+        bool hasBeenClicked = false;
+        private void TextBox_Answer_Focus(object sender, RoutedEventArgs e)
+        {
+            if (!hasBeenClicked)
+            {
+                TextBox box = sender as TextBox;
+                box.Text = String.Empty;
+                hasBeenClicked = true;
+            }
+        }
     }
 }
