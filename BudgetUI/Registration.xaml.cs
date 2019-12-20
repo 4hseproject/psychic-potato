@@ -20,10 +20,16 @@ namespace BudgetUI
     {
         //IAppData appData = Factory.Instance.GetAppData();
         //Calculations calculations = Factory.Instance.GetCalculations();
+
+
         public Registration()
         {
             InitializeComponent();
-            
+            Combobox_questions.Items.Add("Вилкой раз или ...?");
+            Combobox_questions.Items.Add("Есть 2 стула: какой выберешь?");
+            Combobox_questions.Items.Add("Номер твоей мамы");
+
+
         }
 
         private void Button_Enter_Click(object sender, RoutedEventArgs e)
