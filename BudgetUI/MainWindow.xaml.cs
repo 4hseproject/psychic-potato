@@ -24,16 +24,19 @@ namespace BudgetUI
         AppData appData = Factory.Instance.GetAppData();
         Calculations calculations = Factory.Instance.GetCalculations();
         public bool hasBeenClicked { get; set; }
+        public bool hasBeenClicked1 { get; set; }
         public User User { get; set; }
         public MainWindow(User user)
         {
             
             InitializeComponent();
             hasBeenClicked = false;
+            hasBeenClicked1 = false;
             this.User = user;
             foreach (Category el in appData.categories)
             {
-                Category_box.Items.Add(el.Name);
+                if (el.Name != "Income")
+                    Category_box.Items.Add(el.Name);
             }
             Balance_box.Text = User.OverallBalance.ToString();
             Inc_Spend.Items.Add("Spending");
@@ -82,8 +85,8 @@ namespace BudgetUI
                 if (Inc_Spend.SelectedItem is "Income")
                 {
                     Category_box.SelectedIndex = -1;
-                    category.Name = "Income";
-                }
+                    category = calculations.GetCategory("Income");
+;                }
                 else
                 {
                     if (Category_box.SelectedItem is null)
@@ -93,15 +96,11 @@ namespace BudgetUI
                     }
                     else
                     {
-                        category.Name = Category_box.SelectedItem.ToString();
+                        //category.Name = Category_box.SelectedItem.ToString();
+                        category = calculations.GetCategory(Category_box.SelectedItem.ToString());
 
                     }
                 }
-            }
-            foreach (Category el in appData.categories)
-            {
-                if (el.Name == category.Name)
-                    category = el;
             }
             if (Inc_Spend.SelectedItem.ToString().ToLower() == "spending")
             { isSpending = true; }
@@ -132,11 +131,11 @@ namespace BudgetUI
 
         private void Comment_box_GotFocus(object sender, RoutedEventArgs e)
         {
-            if (!hasBeenClicked)
+            if (!hasBeenClicked1)
             {
                 TextBox box = sender as TextBox;
                 box.Text = String.Empty;
-                hasBeenClicked = true;
+                hasBeenClicked1 = true;
             }
         }
     }

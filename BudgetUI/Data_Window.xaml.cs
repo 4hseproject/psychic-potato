@@ -1,4 +1,5 @@
 ﻿using Budget2._0;
+using Budget2._0.models;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -34,8 +35,47 @@ namespace BudgetUI
             this.User = User;
             TextBlock_start.Text = start.ToString();
             TextBlock_end.Text = end.ToString();
-            List<IFlow> flows = new List<IFlow>();
-            if (Category == null)
+            List<DataVisualisation> dataVisualisations = new List<DataVisualisation>();
+            /*if(category == null)
+            {
+                foreach (Income el in appData.gains)
+                {
+                    if (DateTime.Compare(el.TransactionDt, start) >= 0 && DateTime.Compare(el.TransactionDt, end) <= 0)
+                    {
+                        var data = new DataVisualisation();
+                        data.Amount = el.Amount.ToString();
+                        data.CategoryName = el.Category.Name;
+                        data.Date = el.TransactionDt;
+                        dataVisualisations.Add();
+                    }
+                }
+                foreach (Spending el in appData.losses)
+                {
+                    if (DateTime.Compare(el.TransactionDt, start) >= 0 && DateTime.Compare(el.TransactionDt, end) <= 0)
+                        flows.Add(el);
+                }
+                calculations.SortByDate(flows);
+                spendingsList.ItemsSource = flows;
+                //TODO show results for all categories
+            }
+            else
+            {
+                foreach (Income el in appData.gains)
+                {
+                    if (DateTime.Compare(el.TransactionDt, start) >= 0 && DateTime.Compare(el.TransactionDt, end) <= 0 && el.Category == category)
+                        flows.Add(el);
+                }
+                foreach (Spending el in appData.losses)
+                {
+                    if (DateTime.Compare(el.TransactionDt, start) >= 0 && DateTime.Compare(el.TransactionDt, end) <= 0 && el.Category == category)
+                        flows.Add(el);
+                }
+                calculations.SortByDate(flows);
+                spendingsList.ItemsSource = flows;
+                //TODO show results for selected category
+            }
+            /*
+            /*List<IFlow> flows = new List<IFlow>();
             {
                 foreach(Income el in appData.gains)
                 {
@@ -67,6 +107,8 @@ namespace BudgetUI
                 spendingsList.ItemsSource = flows;
                 //TODO show results for selected category
             }
+            */
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

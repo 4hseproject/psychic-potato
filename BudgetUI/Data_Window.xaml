@@ -14,9 +14,9 @@
         <ListView Name="spendingsList" Margin="160,70,134,0" FontSize="25" FontWeight="Bold">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=Category}" Width="150">Category</GridViewColumn>
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=Spending}" Width="200">Spendings</GridViewColumn>
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=DateTime}" Width="150">Date</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Category.Name}" Width="150">Category</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Amount}" Width="200">Spendings</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=TransactionDt}" Width="150">Date</GridViewColumn>
                 </GridView>
             </ListView.View>
 
