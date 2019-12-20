@@ -123,5 +123,12 @@ namespace BudgetUI
         {
 
         }
+
+        private void Button_main_menu_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mw = new MainWindow(User);
+            mw.Show();
+            this.Close();
+        }
     }
 }
