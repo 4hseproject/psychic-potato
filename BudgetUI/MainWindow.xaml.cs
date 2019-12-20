@@ -39,6 +39,10 @@ namespace BudgetUI
                     Category_box.Items.Add(el.Name);
             }
             Balance_box.Text = User.OverallBalance.ToString();
+            if (User.OverallBalance <= 0)
+            {
+                MessageBox.Show("Need More Gold", "Your funds are running low",MessageBoxButton.OK ,MessageBoxImage.Exclamation);
+            }
             Inc_Spend.Items.Add("Spending");
             Inc_Spend.Items.Add("Income");
             //Login lg = new Login();
@@ -108,7 +112,10 @@ namespace BudgetUI
             { isSpending = true; }
             else { isSpending = false; }
             User = calculations.AddFlow(amount, category,comment,isSpending, User);
-            Balance_box.Text = User.OverallBalance.ToString();
+            if (User.OverallBalance <= 0)
+            {
+                MessageBox.Show("Need More Gold", "Your funds are running low", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+            }
             //Balance_box.Text = calculations.CalculateBalance(Decimal.Parse(Balance_box.Text), Decimal.Parse(Sum_box.Text), isSpending).ToString();
             Sum_box.Text = "";
             Comment_box.Text = "";
