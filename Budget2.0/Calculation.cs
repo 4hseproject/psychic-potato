@@ -214,6 +214,20 @@ namespace Budget2._0
             return null;
         }
 
+        public User Changebudgetname(User u , string login, decimal budget)
+        {
+            foreach (var user in Data.users)
+            {
+                if (u == user)
+                {
+                    user.Login = login;
+                    user.OverallBalance = budget;
+                    return user;
+                }
+            }
+            return null;
+        }
+
         //TODO all logic functions go here 
     }
 }
