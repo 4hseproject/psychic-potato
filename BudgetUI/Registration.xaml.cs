@@ -70,13 +70,14 @@ namespace BudgetUI
         {
             TextBox_name.Text = "";
         }
-
-            //TextBox_Answer.Text = "";
-
-        }
-
-        
-        
+        //private void TextBox_Answer_Focus(object sender, RoutedEventArgs e)
+        //{
+            //if (!hasBeenClicked)
+           // {
+                //TextBox box = sender as TextBox;
+              //  box.Text = String.Empty;
+          //      hasBeenClicked = true;
+            //}
+        //}
     }
-
-
+}
