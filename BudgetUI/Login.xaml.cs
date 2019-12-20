@@ -52,8 +52,8 @@ namespace BudgetUI
 
         private void Button_forgot_password_Click(object sender, RoutedEventArgs e)
         {
-            Mary_tries_graphs maryw = new Mary_tries_graphs();
-            maryw.Show();
+            Forgot_password fs = new Forgot_password();
+            fs.Show();
             this.Close();
         }
         private void TextBox_login_GotFocus(object sender, RoutedEventArgs e)
