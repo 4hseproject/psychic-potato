@@ -37,11 +37,13 @@ namespace BudgetUI
             {
                 foreach(Income el in appData.gains)
                 {
-                    flows.Add(el);
+                    if (DateTime.Compare(el.TransactionDt,start) >= 0 && DateTime.Compare(el.TransactionDt, end)<=0)
+                        flows.Add(el);
                 }
                 foreach(Spending el in appData.losses)
                 {
-                    flows.Add(el);
+                    if (DateTime.Compare(el.TransactionDt, start) >= 0 && DateTime.Compare(el.TransactionDt, end) <= 0)
+                        flows.Add(el);
                 }
                 calculations.SortByDate(flows);
                 spendingsList.ItemsSource = flows;
