@@ -30,7 +30,7 @@ namespace BudgetUI
         private void Button_sign_in_Click(object sender, RoutedEventArgs e)
         {
             var user = new User();
-            user = calculations.CheckLogin(TextBox_login.Text, PasswordBox_password.Password);
+            user = calculations.CheckLogin(TextBox_login.Text.Trim(), PasswordBox_password.Password);
             if (user != null)
             {
                 MainWindow mw = new MainWindow(user);
