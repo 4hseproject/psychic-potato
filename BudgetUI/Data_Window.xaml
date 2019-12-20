@@ -22,7 +22,7 @@
             </ListView.View>
 
         </ListView>
-        <Button x:Name="Button_main_menu" Margin="717,310,10,10" FontSize="23" Background="LightPink" Click="Button_main_menu_Click">Main Menu</Button>
+        <Button x:Name="Button_main_menu" Margin="717,310,0,10" FontSize="20" FontWeight="Bold" Background="LightPink" Click="Button_main_menu_Click">Main Menu</Button>
         
     </Grid>
 
