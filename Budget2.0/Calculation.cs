@@ -29,7 +29,7 @@ namespace Budget2._0
             // TODO add data attribute to the IFlow interface, so we can plot graphs using that data
             if (IsSpending)
             {
-                var spending = new Spending(amount,category,comment,user.UID,category.ID);
+                var spending = new Spending(amount,category,comment,user.UID,category.ID,DateTime.Now);
                 Data.GetSpendings(spending);
                 Data.SaveData();
                 user.OverallBalance -= amount;
@@ -43,6 +43,7 @@ namespace Budget2._0
                 income.Comment = comment;
                 income.UID = user.UID;
                 income.CatId = category.ID;
+                income.TransactionDt = DateTime.Now;
                 Data.GetIncomes(income);
                 Data.SaveData();
                 user.OverallBalance += amount;
