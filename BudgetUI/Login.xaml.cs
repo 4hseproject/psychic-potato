@@ -20,9 +20,11 @@ namespace BudgetUI
     {
         AppData appData = Factory.Instance.GetAppData();
         Calculations calculations = Factory.Instance.GetCalculations();
+        public bool hasBeenClicked { get; set; }
         public Login()
         {
             InitializeComponent();
+            hasBeenClicked = false;
         }
 
         private void Button_sign_in_Click(object sender, RoutedEventArgs e)
@@ -53,6 +55,15 @@ namespace BudgetUI
             Mary_tries_graphs maryw = new Mary_tries_graphs();
             maryw.Show();
             this.Close();
+        }
+        private void TextBox_login_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (!hasBeenClicked)
+            {
+                TextBox box = sender as TextBox;
+                box.Text = String.Empty;
+                hasBeenClicked = true;
+            }
         }
     }
 }
