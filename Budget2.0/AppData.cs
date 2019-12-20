@@ -6,24 +6,14 @@ using System.Text;
 
 namespace Budget2._0
 {
-    public interface IAppData
-    {
-        public IRepository<Income> gains { get; }
-        public IRepository<Spending> losses { get; }
-        public IRepository<Category> categories { get; }
-        public IRepository<User> users { get; }
-        void SaveData();
-        void GetSpendings(Spending spending);
-        void GetIncomes(Income income);
 
-    }
-    public abstract class BaseAppData : IAppData
+    public class AppData
     {
-        public IRepository<Income> gains { get; set; }
+        public List<Income> gains { get; set; }
 
-        public IRepository<Spending> losses { get; set; }
-        public IRepository<Category> categories { get; set; }
-        public IRepository<User> users { get; set; }
+        public List<Spending> losses { get; set; }
+        public List<Category> categories { get; set; }
+        public List<User> users { get; set; }
         protected const string GainsFileName = "data/gains.json";
         protected const string LossesFileName = "data/losses.json";
         protected const string CategoriesFileName = "data/categories.json";
@@ -47,6 +37,7 @@ namespace Budget2._0
                 }
             }
         }
+        
         public void GetIncomes(Income income)
         {
             gains.Add(income);
@@ -57,9 +48,8 @@ namespace Budget2._0
             losses.Add(spending);
             SaveData();
         }
-    }
-    public class WindowAppData : BaseAppData
-    {
+
+
         private T Deserialize<T>(string fileName)
         {
             using (var sr = new StreamReader(fileName))
@@ -72,19 +62,19 @@ namespace Budget2._0
             }
         }
         // TODO Add files, check executability
-        private void LoadData()
+        public void LoadData()
         {
-            users = Deserialize<ListRepository<User>>(UsersFileName);
-            gains = Deserialize<ListRepository<Income>>(GainsFileName);
-            losses = Deserialize<ListRepository<Spending>>(LossesFileName);
-            categories = Deserialize<ListRepository<Category>>(CategoriesFileName);
+            users = Deserialize<List<User>>(UsersFileName);
+            gains = Deserialize<List<Income>>(GainsFileName);
+            losses = Deserialize<List<Spending>>(LossesFileName);
+            categories = Deserialize<List<Category>>(CategoriesFileName);
         }
-        public WindowAppData()
+        public AppData()
         {
-            gains = new ListRepository<Income>();
-            losses = new ListRepository<Spending>();
-            categories = new ListRepository<Category>();
-            users = new ListRepository<User>();
+            gains = new List<Income>();
+            losses = new List<Spending>();
+            categories = new List<Category>();
+            users = new List<User>();
             LoadData();
             //TODO here we implement basic categories
         }
@@ -92,3 +82,4 @@ namespace Budget2._0
 
     }
 }
+

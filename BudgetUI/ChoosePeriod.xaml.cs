@@ -24,7 +24,7 @@ namespace BudgetUI
         public ChoosePeriod(User user)
         {
             InitializeComponent();
-            this.User = User;
+            this.User = user;
         }
 
         private void Back_Button_Click(object sender, RoutedEventArgs e)

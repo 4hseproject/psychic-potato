@@ -23,21 +23,29 @@ namespace BudgetUI
         public Registration()
         {
             InitializeComponent();
+            
         }
 
         private void Button_Enter_Click(object sender, RoutedEventArgs e)
         {
-            
+            Calculations calculations = Factory.Instance.GetCalculations();
             if (TextBox_name.Text.Length > 0) 
             {
                 if (PasswordBox_password.Password.Length > 0)
                 {
-                    if (Int32.TryParse(TextBox_budget.Text, out int budget))
+                    if (Decimal.TryParse(TextBox_budget.Text, out decimal budget))
                     {
-                        //calculations.AddUser(TextBox_name.Text, PasswordBox_password.Password, budget);
-                        Login lw = new Login();
-                        lw.Show();
-                        this.Close();
+
+                        if (calculations.AddUser(TextBox_name.Text, PasswordBox_password.Password, budget))
+                        {
+                            Login lw = new Login();
+                            lw.Show();
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("User already exists");
+                        }
                     }
                     else
                         MessageBox.Show("Please input your budget properly", "Type Error");

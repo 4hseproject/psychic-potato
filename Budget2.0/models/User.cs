@@ -14,6 +14,6 @@ namespace Budget2._0
         [JsonProperty]
         public int UID { get; set; }
         [JsonProperty]
-        public int OverallBalance { get; set; }
+        public decimal OverallBalance { get; set; }
     }
 }

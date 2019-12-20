@@ -21,14 +21,13 @@ namespace BudgetUI
     /// </summary>
     public partial class MainWindow : Window
     {
-        IAppData appData = Factory.Instance.GetAppData();
+        AppData appData = Factory.Instance.GetAppData();
         Calculations calculations = Factory.Instance.GetCalculations();
         public User User { get; set; }
         public MainWindow(User user)
         {
             InitializeComponent();
             this.User = user;
-            int check = User.OverallBalance;
             foreach (Category el in appData.categories)
             {
                 Category_box.Items.Add(el.Name);
@@ -60,13 +59,36 @@ namespace BudgetUI
             string comment;
             comment = Comment_box.Text;
             Category category = new Category();
-            while (
+            if(
             !Decimal.TryParse(Sum_box.Text,out amount))
             {
                 MessageBox.Show("Please use apropriate format", "Wrong format");
+                return;
             }
-            
-            category.Name = Category_box.SelectedItem.ToString();
+            if (Inc_Spend.SelectedItem is null)
+            {
+                MessageBox.Show("Chose trazaktion", "Gde den§gi?");
+            }
+            else
+            {
+                if (Inc_Spend.SelectedItem is "Income")
+                {
+                    category.Name = "Income";
+                }
+                else
+                {
+                    if (Category_box.SelectedItem is null)
+                    {
+                        MessageBox.Show("zapili categoriu");
+                        return;
+                    }
+                    else
+                    {
+                        category.Name = Category_box.SelectedItem.ToString();
+
+                    }
+                }
+            }
             foreach (Category el in appData.categories)
             {
                 if (el.Name == category.Name)
@@ -75,7 +97,9 @@ namespace BudgetUI
             if (Inc_Spend.SelectedItem.ToString().ToLower() == "spending")
             { isSpending = true; }
             else { isSpending = false; }
-            calculations.AddFlow(amount, category,comment,isSpending, User);
+            User = calculations.AddFlow(amount, category,comment,isSpending, User);
+            Balance_box.Text = User.OverallBalance.ToString();
+            //Balance_box.Text = calculations.CalculateBalance(Decimal.Parse(Balance_box.Text), Decimal.Parse(Sum_box.Text), isSpending).ToString();
             Sum_box.Text = "";
             Comment_box.Text = "";
             Inc_Spend.SelectedIndex = -1;
