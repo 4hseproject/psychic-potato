@@ -70,10 +70,5 @@ namespace BudgetUI
         {
 
         }
-
-        private void Button_main_menu_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
     }
 }
