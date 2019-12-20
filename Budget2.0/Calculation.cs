@@ -222,6 +222,7 @@ namespace Budget2._0
                 {
                     user.Login = login;
                     user.OverallBalance = budget;
+                    Data.SaveData();
                     return user;
                 }
             }
