@@ -23,10 +23,13 @@ namespace BudgetUI
     {
         AppData appData = Factory.Instance.GetAppData();
         Calculations calculations = Factory.Instance.GetCalculations();
+        public bool hasBeenClicked { get; set; }
         public User User { get; set; }
         public MainWindow(User user)
         {
+            
             InitializeComponent();
+            hasBeenClicked = false;
             this.User = user;
             foreach (Category el in appData.categories)
             {
@@ -109,6 +112,21 @@ namespace BudgetUI
         private void Button_setting_Click(object sender, RoutedEventArgs e)
         {
             
+        }
+
+        private void Sum_box_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (!hasBeenClicked)
+            {
+                TextBox box = sender as TextBox;
+                box.Text = String.Empty;
+                hasBeenClicked = true;
+            }
+        }
+
+        private void Comment_box_GotFocus(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

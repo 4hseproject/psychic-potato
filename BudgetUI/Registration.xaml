@@ -7,12 +7,13 @@
         mc:Ignorable="d"
         Title="Registration" Height="450" Width="800">
     <Grid>
+        <TextBox x:Name="TextBox_name" Margin="29,0,371,303" FontSize="37" VerticalAlignment="Bottom" TextChanged="TextBox_name_TextChanged"></TextBox>
+        <TextBox x:Name="TextBox_budget" Margin="29,0,371,221" FontSize="37" VerticalAlignment="Bottom"></TextBox>
+        <PasswordBox x:Name="PasswordBox_password" Margin="29,0,371,138" FontSize="37" VerticalAlignment="Bottom"></PasswordBox>
+        <ComboBox x:Name="Combobox_questions" Margin="29,324,371,59"></ComboBox>
         <TextBlock Margin="0,3,0,0" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Top" FontWeight="Bold">Registration</TextBlock>
-        <TextBox x:Name="TextBox_name" Margin="29,0,371,307" FontSize="37" VerticalAlignment="Bottom" TextChanged="TextBox_name_TextChanged"></TextBox>
-        <TextBox x:Name="TextBox_budget" Margin="29,0,371,243" FontSize="37" VerticalAlignment="Bottom"></TextBox>
-        <PasswordBox x:Name="PasswordBox_password" Margin="29,0,371,174" FontSize="37" VerticalAlignment="Bottom"></PasswordBox>
-        <ComboBox x:Name="Combobox_questions" Margin="29,256,371,100"></ComboBox>
-        <TextBox x:Name="TextBox_Answer" Margin="29,324,371,32"></TextBox>
+        
+        <TextBox x:Name="TextBox_Answer" Margin="372,241,28,115"></TextBox>
         <Button x:Name="Button_Enter" Margin="496,324,28,32" FontSize="30" FontWeight="Bold" Background="LightGreen" Click="Button_Enter_Click">Enter</Button>
     </Grid>
 </Window>
