@@ -49,7 +49,7 @@ namespace BudgetUI
                 }
                 else
                 {
-                    User = calculations.Changebudgetname(User, TextBox_Budget.Text.Trim(), amount);
+                    User = calculations.Changebudgetname(User, TextBox_Name.Text.Trim(), amount);
                     MainWindow mw = new MainWindow(User);
                     mw.Show();
                     this.Close();
