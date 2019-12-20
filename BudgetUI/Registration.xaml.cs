@@ -21,10 +21,11 @@ namespace BudgetUI
         //IAppData appData = Factory.Instance.GetAppData();
         //Calculations calculations = Factory.Instance.GetCalculations();
 
-
+        public bool hasBeenClicked { get; set; }
         public Registration()
         {
             InitializeComponent();
+            hasBeenClicked = false;
             Combobox_questions.Items.Add("Вилкой раз или ...?");
             Combobox_questions.Items.Add("Есть 2 стула: какой выберешь?");
             Combobox_questions.Items.Add("Номер твоей мамы");
@@ -80,15 +81,52 @@ namespace BudgetUI
                 MessageBox.Show("Login cannot be empty");
         }
 
+        private void Button_back_Click(object sender, RoutedEventArgs e)
+        {
+            Login lw = new Login();
+            lw.Show();
+            this.Close();
+        }
+
+        private void TextBox_name_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (!hasBeenClicked)
+            {
+                TextBox box = sender as TextBox;
+                box.Text = String.Empty;
+                hasBeenClicked = true;
+            }
+        }
+
+        private void TextBox_budget_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (!hasBeenClicked)
+            {
+                TextBox box = sender as TextBox;
+                box.Text = String.Empty;
+                hasBeenClicked = true;
+            }
+        }
+
+        private void TextBox_Answer_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (!hasBeenClicked)
+            {
+                TextBox box = sender as TextBox;
+                box.Text = String.Empty;
+                hasBeenClicked = true;
+            }
+        }
+
 
         //private void TextBox_Answer_Focus(object sender, RoutedEventArgs e)
         //{
-            //if (!hasBeenClicked)
-           // {
-                //TextBox box = sender as TextBox;
-              //  box.Text = String.Empty;
-          //      hasBeenClicked = true;
-            //}
+        //if (!hasBeenClicked)
+        // {
+        //TextBox box = sender as TextBox;
+        //  box.Text = String.Empty;
+        //      hasBeenClicked = true;
+        //}
         //}
 
 
