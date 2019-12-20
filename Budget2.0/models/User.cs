@@ -17,6 +17,8 @@ namespace Budget2._0
         public decimal OverallBalance { get; set; }
         [JsonProperty]
         public string Answer { get; set; }
+        [JsonProperty]
+        public string Question { get; set; }
 
     }
 }
