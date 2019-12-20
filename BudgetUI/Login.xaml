@@ -7,8 +7,9 @@
         mc:Ignorable="d"
         Title="Login" Height="450" Width="800" ResizeMode="NoResize">
     <Grid Height="450" Margin="0,0,-18,0">
-        <TextBox x:Name="TextBox_login" Margin="208,48,207,0" FontSize="40" VerticalAlignment="Top" GotFocus="TextBox_login_GotFocus">Name</TextBox>
-        <TextBlock FontSize="40" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="208,108,0,0">Password:</TextBlock>
+        <TextBox x:Name="TextBox_login" Margin="208,48,207,0" FontSize="40" VerticalAlignment="Top" GotFocus="TextBox_login_GotFocus"></TextBox>
+        <TextBlock FontSize="40" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="29,156,0,0">Password:</TextBlock>
+        <TextBlock FontSize="40" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="88,49,0,0">Name:</TextBlock>
         <PasswordBox x:Name="PasswordBox_password" Margin="208,156,208,240"  FontSize="40" VerticalAlignment="Bottom"></PasswordBox>
         <Button x:Name="Button_sign_in" Margin="282,236,281,149" FontSize="30" FontWeight="Bold" Background="LightGreen" Click="Button_sign_in_Click">Sign in</Button>
         <Button x:Name="Button_sign_up" Margin="208,320,426,74" FontSize="25" FontWeight="Bold" Background="LightPink" Click="Button_sign_up_Click">Sign up</Button>

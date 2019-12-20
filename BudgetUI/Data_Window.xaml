@@ -8,9 +8,9 @@
         Title="Data_Window" Height="450" Width="800">
     <Grid>
         <TextBlock Margin="10,14,526,0" FontSize="23" VerticalAlignment="Top">Your expenses for period:</TextBlock>
-        <TextBox x:Name="TextBlock_start" Margin="274,15,392,0" FontSize="22" VerticalAlignment="Top">22.02.2009</TextBox>
-        <TextBlock FontSize="20" Margin="413,18,371,388">-</TextBlock>
-        <TextBox x:Name="TextBlock_end" Margin="429,15,239,0" FontSize="22" VerticalAlignment="Top">23.02.2009</TextBox>
+        <TextBox x:Name="TextBlock_start" Margin="276,15,0,0" FontSize="22" VerticalAlignment="Top" HorizontalAlignment="Left">dd.mm.yyyy</TextBox>
+        <TextBlock FontSize="30" Margin="407,7,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">-</TextBlock>
+        <TextBox x:Name="TextBlock_end" Margin="429,15,245,0" FontSize="22" VerticalAlignment="Top" HorizontalAlignment="Left">dd.mm.yyyy</TextBox>
         <ListView Name="spendingsList" Margin="47,60,47,10" FontSize="25" FontWeight="Bold">
             <ListView.View>
                 <GridView>

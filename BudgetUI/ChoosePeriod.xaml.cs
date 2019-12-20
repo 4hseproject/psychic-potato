@@ -18,6 +18,8 @@ namespace BudgetUI
     /// </summary>
     public partial class ChoosePeriod : Window
     {
+        public bool hasBeenClicked { get; set; }
+        public bool hasBeenClicked1 { get; set; }
         AppData appData = Factory.Instance.GetAppData();
         Calculations calculations = Factory.Instance.GetCalculations();
         public User User { get; set; }
@@ -25,6 +27,8 @@ namespace BudgetUI
         {
             InitializeComponent();
             this.User = user;
+            hasBeenClicked = false;
+            hasBeenClicked1 = false;
         }
 
         private void Back_Button_Click(object sender, RoutedEventArgs e)
@@ -52,6 +56,26 @@ namespace BudgetUI
             Data_Window dw = new Data_Window(User,result, result2,category);
             dw.Show();
             this.Close();
+        }
+
+        private void TextBox_Start_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (!hasBeenClicked)
+            {
+                TextBox box = sender as TextBox;
+                box.Text = String.Empty;
+                hasBeenClicked = true;
+            }
+        }
+
+        private void TextBox_End_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (!hasBeenClicked1)
+            {
+                TextBox box = sender as TextBox;
+                box.Text = String.Empty;
+                hasBeenClicked1 = true;
+            }
         }
     }
 }

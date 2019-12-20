@@ -22,10 +22,14 @@ namespace BudgetUI
         //Calculations calculations = Factory.Instance.GetCalculations();
 
         public bool hasBeenClicked { get; set; }
+        public bool hasBeenClicked1 { get; set; }
+        public bool hasBeenClicked2 { get; set; }
         public Registration()
         {
             InitializeComponent();
             hasBeenClicked = false;
+            hasBeenClicked1 = false;
+            hasBeenClicked2 = false;
             Combobox_questions.Items.Add("Вилкой раз или ...?");
             Combobox_questions.Items.Add("Есть 2 стула: какой выберешь?");
             Combobox_questions.Items.Add("Номер твоей мамы");
@@ -100,21 +104,21 @@ namespace BudgetUI
 
         private void TextBox_budget_GotFocus(object sender, RoutedEventArgs e)
         {
-            if (!hasBeenClicked)
+            if (!hasBeenClicked1)
             {
                 TextBox box = sender as TextBox;
                 box.Text = String.Empty;
-                hasBeenClicked = true;
+                hasBeenClicked1 = true;
             }
         }
 
         private void TextBox_Answer_GotFocus(object sender, RoutedEventArgs e)
         {
-            if (!hasBeenClicked)
+            if (!hasBeenClicked2)
             {
                 TextBox box = sender as TextBox;
                 box.Text = String.Empty;
-                hasBeenClicked = true;
+                hasBeenClicked2 = true;
             }
         }
 
