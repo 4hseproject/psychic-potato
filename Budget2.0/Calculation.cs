@@ -31,8 +31,9 @@ namespace Budget2._0
             {
                 var spending = new Spending(amount,category,comment,user.UID,category.ID,DateTime.Now);
                 Data.GetSpendings(spending);
-                Data.SaveData();
                 user.OverallBalance -= amount;
+                Data.SaveData();
+                
                 return user;
             }
             else
@@ -45,8 +46,9 @@ namespace Budget2._0
                 income.CatId = category.ID;
                 income.TransactionDt = DateTime.Now;
                 Data.GetIncomes(income);
-                Data.SaveData();
                 user.OverallBalance += amount;
+                Data.SaveData();
+                
                 return user;
             }
         }
