@@ -7,21 +7,21 @@
         mc:Ignorable="d"
         Title="Data_Window" Height="450" Width="800">
     <Grid>
-        <TextBlock Margin="10,14,558,0" FontSize="20" VerticalAlignment="Top">Your expenses for period:</TextBlock>
-        <TextBox x:Name="TextBlock_start" Margin="242,13,438,0" FontSize="22" VerticalAlignment="Top">22.02.2009</TextBox>
-        <TextBlock FontSize="20" Margin="362,14,422,392">-</TextBlock>
-        <TextBox Margin="383,12,297,0" FontSize="22" VerticalAlignment="Top">23.02.2009</TextBox>
-        <ListView Name="spendingsList" Margin="96,49,380,-2" FontSize="25" FontWeight="Bold">
+        <TextBlock Margin="10,14,526,0" FontSize="23" VerticalAlignment="Top">Your expenses for period:</TextBlock>
+        <TextBox x:Name="TextBlock_start" Margin="280,13,400,0" FontSize="22" VerticalAlignment="Top">22.02.2009</TextBox>
+        <TextBlock FontSize="20" Margin="405,15,379,391">-</TextBlock>
+        <TextBox Margin="426,15,254,0" FontSize="22" VerticalAlignment="Top">23.02.2009</TextBox>
+        <ListView Name="spendingsList" Margin="160,70,134,0" FontSize="25" FontWeight="Bold">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=Category}" Width="Auto">Category</GridViewColumn>
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=Spending}" Width="Auto">Spendings</GridViewColumn>
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=DateTime}" Width="Auto">Date</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Category}" Width="150">Category</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Spending}" Width="200">Spendings</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=DateTime}" Width="150">Date</GridViewColumn>
                 </GridView>
             </ListView.View>
-            
+
         </ListView>
 
     </Grid>
-    
+
 </Window>

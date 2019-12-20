@@ -7,9 +7,10 @@
         mc:Ignorable="d"
         Title="Registration" Height="450" Width="800">
     <Grid>
-        <TextBox x:Name="TextBox_name" Margin="29,80,371,293" FontSize="37" VerticalAlignment="Bottom"></TextBox>
-        <TextBox x:Name="TextBox_budget" Margin="29,156,371,217" FontSize="37" VerticalAlignment="Bottom"></TextBox>
-        <PasswordBox x:Name="PasswordBox_password" Margin="29,237,371,136" FontSize="37" VerticalAlignment="Bottom"></PasswordBox>
+        <TextBox x:Name="TextBox_name" Margin="29,0,371,303" FontSize="37" VerticalAlignment="Bottom"></TextBox>
+        <TextBox x:Name="TextBox_budget" Margin="29,0,371,221" FontSize="37" VerticalAlignment="Bottom"></TextBox>
+        <PasswordBox x:Name="PasswordBox_password" Margin="29,0,371,138" FontSize="37" VerticalAlignment="Bottom"></PasswordBox>
+        <ComboBox x:Name="Combobox_questions" Margin="29,324,371,59"></ComboBox>
         <Button x:Name="Button_Enter" Margin="496,324,28,32" FontSize="30" FontWeight="Bold" Background="LightGreen" Click="Button_Enter_Click">Enter</Button>
     </Grid>
 </Window>
