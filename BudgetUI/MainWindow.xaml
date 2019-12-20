@@ -17,7 +17,7 @@
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
-        <Button x:Name="Button_setting" Grid.Column="1" Margin="219,10,10,28">
+        <Button x:Name="Button_setting" Grid.Column="1" Margin="206,10,12,28" Click="Button_setting_Click_1" >
             <StackPanel Orientation="Horizontal" Width="66">
                 <Image Source="setting_image.png"/>
             </StackPanel>

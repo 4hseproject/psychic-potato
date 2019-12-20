@@ -140,5 +140,12 @@ namespace BudgetUI
                 hasBeenClicked1 = true;
             }
         }
+
+        private void Button_setting_Click_1(object sender, RoutedEventArgs e)
+        {
+            Settings_window sw = new Settings_window(User);
+            sw.Show();
+            this.Close();
+        }
     }
 }

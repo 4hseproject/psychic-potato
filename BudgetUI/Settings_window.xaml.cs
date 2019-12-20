@@ -9,6 +9,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Budget2._0;
 
 namespace BudgetUI
 {
@@ -19,8 +20,10 @@ namespace BudgetUI
     {
         public bool hasBeenClicked { get; set; }
         public bool hasBeenClicked1 { get; set; }
-        public Settings_window()
+        public User User { get; set; }
+        public Settings_window(User user)
         {
+            this.User = user;
             InitializeComponent();
             hasBeenClicked = false;
             hasBeenClicked1 = false;
@@ -28,9 +31,9 @@ namespace BudgetUI
 
         private void Button_MainMenu_Click(object sender, RoutedEventArgs e)
         {
-            //MainWindow mw = new MainWindow(user);
-            //mw.Show();
-            //this.Close();
+            MainWindow mw = new MainWindow(User);
+            mw.Show();
+            this.Close();
         }
 
         private void Button_ok_Click(object sender, RoutedEventArgs e)
