@@ -8,6 +8,7 @@ namespace Budget2._0.models
     {
         public string Amount { get; set; }
         public DateTime Date { get; set; }
+        public string Comment { get; set; }
     }
     public class DataVisualisationNoCatSelection:DataVisualisationGeneral
     {

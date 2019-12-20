@@ -43,6 +43,7 @@ namespace BudgetUI
                     if (DateTime.Compare(el.TransactionDt, start) >= 0 && DateTime.Compare(el.TransactionDt, end) <= 0 && el.Category != null)
                     {
                         var data = new DataVisualisationNoCatSelection(el.Amount.ToString(), el.TransactionDt, "Income", el.Category.Name);
+                        data.CategoryName = el.Comment;
                         dataVisualisations.Add(data);
                     }
                 }
@@ -51,6 +52,7 @@ namespace BudgetUI
                     if (DateTime.Compare(el.TransactionDt, start) >= 0 && DateTime.Compare(el.TransactionDt, end) <= 0 && el.Category != null)
                     {
                         var data = new DataVisualisationNoCatSelection(el.Amount.ToString(), el.TransactionDt, "Spending", el.Category.Name);
+                        data.Comment = el.Comment;
                         dataVisualisations.Add(data);
                     }
                 }

@@ -78,7 +78,9 @@ namespace BudgetUI
             }
             if (Inc_Spend.SelectedItem is null)
             {
+
                 MessageBox.Show("Chose trazaktion", "Gde den§gi?");
+                return;
             }
             else
             {
